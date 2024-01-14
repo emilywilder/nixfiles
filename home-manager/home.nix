@@ -42,6 +42,7 @@
     pkgs.sourceHighlight
     pkgs.jq
     pkgs.xz
+    pkgs._7zz
     pkgs.asdf-vm
     pkgs.bmake
     pkgs.wget
