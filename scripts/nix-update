@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo -i sh -c 'nix-update.sh'
+exit $?

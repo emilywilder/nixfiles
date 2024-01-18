@@ -1,13 +1,28 @@
 HOME ?= /Users/emily
 CONFIG_DIR = $(HOME)/.config
+BIN_DIR = $(HOME)/bin
 PWD := $(realpath ./)
 
 .PHONY: GNUmakefile
 .DEFAULT_GOAL := install
 
-tools := grep nix-channel nix-env nix-shell stat ln which unlink
+.PHONY: tools
+tools := grep nix-channel nix-env nix-shell stat ln which unlink rm
 $(tools):
 	@which $@ > /dev/null
+
+.PHONY: scripts
+scripts := $(HOME)/bin/nix-update.sh $(HOME)/bin/nix-update
+scripts: $(scripts)
+$(scripts): | $(BIN_DIR)
+	install ./scripts/$(@F) $@
+
+.PHONY: scripts-clean
+scripts-clean: rm
+	-rm $(scripts)
+
+$(BIN_DIR):
+	mkdir -p $@
 
 ifeq (Directory, $(shell stat -f "%HT" $(CONFIG_DIR)/home-manager 2>/dev/null))
 	$(error $(CONFIG_DIR)/home-manager already exists, aborting...)
@@ -45,14 +60,15 @@ $(CONFIG_DIR)/home-manager: | $(PWD)/home-manager
 link: | $(CONFIG_DIR)/home-manager
 
 .PHONY: clean
-clean: channel-clean home-manager-clean unlink
+clean: channel-clean home-manager-clean unlink scripts-clean
 ifeq (Symbolic Link, $(shell stat -f "%HT" $(CONFIG_DIR)/home-manager 2>/dev/null))
 	unlink $(CONFIG_DIR)/home-manager
 endif
 
 .PHONY: install
-install: home-manager
+install: home-manager scripts
 	home-manager switch
 
 .PHONY: uninstall
 uninstall: clean
+	-rmdir $(BIN_DIR)
