@@ -12,7 +12,7 @@ $(tools):
 	@which $@ > /dev/null
 
 .PHONY: scripts
-scripts := $(HOME)/bin/nix-update.sh $(HOME)/bin/nix-update
+scripts := $(HOME)/bin/nix-root-update.sh $(HOME)/bin/nix-update
 scripts: $(scripts)
 $(scripts): | $(BIN_DIR)
 	install ./scripts/$(@F) $@
