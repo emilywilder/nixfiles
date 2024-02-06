@@ -1,4 +1,54 @@
 #!/bin/sh
 
-sudo -i sh -c 'nix-root-update.sh'
-exit $?
+export RESET_COLOR='\033[0m'
+export RED='\033[0;31m'
+export GREEN='\033[0;32m'
+export YELLOW='\033[0;33m'
+
+function get_user_id() {
+    id -u
+}
+
+function get_user_name() {
+    id -un
+}
+
+function is_root() {
+    if [ "$(get_user_id)" -eq "0" ]
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+if $(is_root)
+then
+    echo "updating nix for root..."
+    sudo -i sh -c 'nix-update.sh'
+    exit $?
+else
+    echo "updating nix for $(get_user_name)..."
+    if ! nix-channel --update
+        export _before_file="$(mktemp)"
+        export _after_file="$(mktemp)"
+        home-manager packages > ${_before_file}
+        home-manager switch
+        home-manager packages > ${_after_file}
+        diff -y ${_before_file} ${_after_file} | grep -e '|' -e '<' -e '>' | while read _before _comp _after; do
+            if [ "${_comp}" = "<" ]
+            then
+                echo "${RED}removed${RESET_COLOR} ${_before}"
+            elif [ "${_before}" = ">" ] # first token is the comparison symbol
+            then
+                echo "${GREEN}added${RESET_COLOR} ${_comp}"
+            elif [ "${_comp}" = "|" ]
+            then
+                echo "${_before} ${YELLOW}>${RESET_COLOR} ${_after}"
+            fi
+        done
+        rm -f ${_before_file} ${_after_file}
+    then
+        exit $?
+    fi
+fi
