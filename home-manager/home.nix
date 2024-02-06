@@ -56,6 +56,7 @@
     pkgs.R
     pkgs.postgresql
     pkgs.yarn
+    pkgs.bat
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
