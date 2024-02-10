@@ -45,6 +45,8 @@
     pkgs._7zz
     pkgs.asdf-vm
     pkgs.bmake
+    pkgs.gnumake
+    pkgs.cmake
     pkgs.wget
     pkgs.pdfgrep
     pkgs.openssh
