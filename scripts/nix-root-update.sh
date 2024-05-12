@@ -8,7 +8,7 @@ darwinCheck() {
 }
 
 updateNix() {
-    echo "Updading nix-channel..."
+    echo "Updating nix-channel..."
     if nix-channel --update; then
         echo "Upgrading nixpkgs.nix..."
         nix-env -iA nixpkgs.nix && return $?
@@ -36,7 +36,7 @@ reloadDaemon() {
 
 # check platform
 if ! darwinCheck; then
-    echo "$(basename $0) must be run on Darwin"
+    echo "$(basename "$0") must be run on Darwin"
     exit 1
 fi
 # update Nix
