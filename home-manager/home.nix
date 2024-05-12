@@ -59,6 +59,11 @@
     pkgs.postgresql
     pkgs.yarn
     pkgs.bat
+    pkgs.hercules
+    pkgs.typescript
+    pkgs.tree
+    pkgs.shellcheck
+    pkgs.shfmt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
