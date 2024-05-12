@@ -5,6 +5,17 @@ export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 export YELLOW='\033[0;33m'
 
+export BEFORE_FILE
+export AFTER_FILE
+
+error() {
+  echo "${RED}ERROR:${RESET_COLOR} $*" >&2
+  echo "${YELLOW}cleaning temp files...${RESET_COLOR}" >&2
+  clean_temp_files
+  echo "${YELLOW}exiting...${RESET_COLOR}" >&2
+  exit 1
+}
+
 get_user_id() {
     id -u
 }
@@ -22,34 +33,60 @@ is_root() {
     fi
 }
 
-if is_root
-then
+update_root() {
     echo "updating nix for root..."
     sudo -i sh -c 'nix-root-update.sh'
-    exit $?
-else
+    return $?
+}
+
+update_user() {
     echo "updating nix for $(get_user_name)..."
-    if ! nix-channel --update
-    then
-        exit $?
-    else
-        _before_file="$(mktemp)"
-        _after_file="$(mktemp)"
-        home-manager packages > "${_before_file}"
-        home-manager switch
-        home-manager packages > "${_after_file}"
-        diff -y "${_before_file}" "${_after_file}" | grep -e '|' -e '<' -e '>' | while read -r _before _comp _after; do
-            if [ "${_comp}" = "<" ]
-            then
-                echo "${RED}removed${RESET_COLOR} ${_before}"
-            elif [ "${_before}" = ">" ] # first token is the comparison symbol
-            then
-                echo "${GREEN}added${RESET_COLOR} ${_comp}"
-            elif [ "${_comp}" = "|" ]
-            then
-                echo "${_before} ${YELLOW}>${RESET_COLOR} ${_after}"
-            fi
-        done
-        rm -f "${_before_file}" "${_after_file}"
-    fi
-fi
+    nix-channel --update
+    return $?
+}
+
+make_temp_files() {
+    BEFORE_FILE="$(mktemp)"
+    AFTER_FILE="$(mktemp)"
+}
+
+hm_switch() {
+    export _ret_val
+    home-manager packages > "${BEFORE_FILE}"
+    home-manager switch
+    _ret_val="$?"
+    home-manager packages > "${AFTER_FILE}"
+    return "${_ret_val}"
+}
+
+show_result() {
+    diff -y "${BEFORE_FILE}" "${AFTER_FILE}" | grep -e '|' -e '<' -e '>' | while read -r _before _comp _after; do
+        if [ "${_comp}" = "<" ]
+        then
+            echo "${RED}removed${RESET_COLOR} ${_before}"
+        elif [ "${_before}" = ">" ] # first token is the comparison symbol
+        then
+            echo "${GREEN}added${RESET_COLOR} ${_comp}"
+        elif [ "${_comp}" = "|" ]
+        then
+            echo "${_before} ${YELLOW}>${RESET_COLOR} ${_after}"
+        fi
+    done
+}
+
+clean_temp_files() {
+    for _file in "${BEFORE_FILE}" "${AFTER_FILE}"
+    do
+        if [ -f "${_file}" ]
+        then
+          rm -f "${_file}"
+        fi
+    done
+}
+
+update_root || error "unable to update root"
+update_user || error "unable to update user"
+make_temp_files
+hm_switch || error "unable to switch home-manager"
+show_result
+clean_temp_files
