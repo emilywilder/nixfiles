@@ -13,8 +13,9 @@ darwinCheck() {
 updateNix() {
     echo "Updating nix-channel..."
     if nix-channel --update; then
-        echo "Upgrading nixpkgs.nix..."
-        nix-env -iA nixpkgs.nix && return $?
+        echo "Upgrading nix..."
+        nix-env --install --file '<nixpkgs>' --attr nix -I nixpkgs=channel:nixpkgs-unstable
+        return $?
     else
         return $?
     fi
