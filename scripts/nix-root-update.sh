@@ -1,4 +1,7 @@
 #!/bin/sh
+
+NIX_DAEMON_SOCKET="/nix/var/nix/daemon-socket/socket"
+
 darwinCheck() {
     if [ "$(uname)" != "Darwin" ] ; then
         return 1
@@ -28,8 +31,16 @@ reloadDaemon() {
     # launchctl load returns 0 in fail states
     echo "Loading plist..."
     if ! launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist; then
+        echo "failed"
         return 1
     else
+        echo "Waiting for nix-daemon socket...\c"
+        while ! socat -u OPEN:/dev/null UNIX-CONNECT:${NIX_DAEMON_SOCKET} >/dev/null 2>&1
+        do
+            sleep 1
+            echo ".\c"
+        done
+        echo "done"
         return 0
     fi
 }
