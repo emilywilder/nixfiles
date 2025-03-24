@@ -53,6 +53,7 @@
     pkgs.nmap
     pkgs.graphviz
     pkgs.python312
+    pkgs.python312Packages.pip
     pkgs.perl
     pkgs.nodejs
     pkgs.R
@@ -65,6 +66,7 @@
     pkgs.shellcheck
     pkgs.shfmt
     pkgs.socat
+    pkgs.kitty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
