@@ -16,10 +16,6 @@ info() {
     echo "${GREEN}INFO:${RESET_COLOR} $*"
 }
 
-info_on_stderr() {
-
-}
-
 get_user_id() {
     id -u
 }
