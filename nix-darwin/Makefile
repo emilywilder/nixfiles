@@ -22,9 +22,15 @@ install : $(NIX_DARWIN_CONFIG)
 
 .PHONY : uninstall
 uninstall :
-	-sudo rm $(NIX_DARWIN_CONFIG)
-	-sudo rmdir $(NIX_DARWIN_DIR)
+ifneq (,$(wildcard $(NIX_DARWIN_CONFIG)))
+	sudo rm $(NIX_DARWIN_CONFIG)
+endif
+ifneq (,$(wildcard $(NIX_DARWIN_DIR)))
+	sudo rmdir $(NIX_DARWIN_DIR)
+endif
 
 .PHONY: clean
 clean :
-	-rm $(FLAKE)
+ifneq (,$(wildcard $(FLAKE)))
+	rm $(FLAKE)
+endif
