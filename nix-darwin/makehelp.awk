@@ -1,4 +1,4 @@
-awk 'BEGIN {
+BEGIN {
         FS = ":.*##";
         printf "\nUsage:\n  make \033[36m<target>\033[0m\n"
     }
@@ -9,4 +9,4 @@ awk 'BEGIN {
 
     /^##@/ {
         printf "\n\033[1m%s\033[0m\n", substr($0, 5)
-    } '  Makefile
+    }

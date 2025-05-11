@@ -38,4 +38,4 @@ endif
 # from https://cloud.theodo.com/en/blog/beautiful-makefile-awk
 .PHONY : help
 help: ## Display this help.
-	@$(SHELL) makehelp.sh
+	@awk -f makehelp.awk $(MAKEFILE_LIST)
