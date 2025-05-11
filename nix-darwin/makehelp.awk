@@ -1,4 +1,5 @@
 # from https://cloud.theodo.com/en/blog/beautiful-makefile-awk
+# FIXME: make work for 'target :' formatting
 BEGIN {
     FS = ":.*##";
     printf "\nUsage:\n  make \033[36m<target>\033[0m\n"
