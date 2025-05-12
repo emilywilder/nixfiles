@@ -1,7 +1,7 @@
 # from https://cloud.theodo.com/en/blog/beautiful-makefile-awk
 # with some modifications
 BEGIN {
-    FS = ":.*##";
+    FS = ":.*##"
     printf "Usage:\n  make \033[36m<target>\033[0m\n"
 }
 
