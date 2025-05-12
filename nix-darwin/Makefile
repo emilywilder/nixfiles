@@ -34,7 +34,3 @@ clean :
 ifneq (,$(wildcard $(FLAKE)))
 	rm $(FLAKE)
 endif
-
-.PHONY : help
-help: ## Display this help.
-	@awk -f makehelp.awk $(MAKEFILE_LIST)
