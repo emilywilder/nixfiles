@@ -29,7 +29,7 @@ ifneq (,$(wildcard $(NIX_DARWIN_DIR)))
 	sudo rmdir $(NIX_DARWIN_DIR)
 endif
 
-.PHONY: clean
+.PHONY : clean
 clean :
 ifneq (,$(wildcard $(FLAKE)))
 	rm $(FLAKE)
