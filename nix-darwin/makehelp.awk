@@ -1,11 +1,11 @@
 # from https://cloud.theodo.com/en/blog/beautiful-makefile-awk
-# FIXME: make work for 'target :' formatting
+# with some modifications
 BEGIN {
     FS = ":.*##";
-    printf "\nUsage:\n  make \033[36m<target>\033[0m\n"
+    printf "Usage:\n  make \033[36m<target>\033[0m\n"
 }
 
-/^[a-zA-Z_0-9-]+:.*?##/ {
+/^[[:alnum:]]+[[:blank:]]*:.*?##/ {
     printf "  \033[36m%-15s\033[0m %s\n", $1, $2
 }
 
