@@ -29,12 +29,6 @@ ifneq (,$(wildcard $(NIX_DARWIN_DIR)))
 	sudo rmdir $(NIX_DARWIN_DIR)
 endif
 
-.PHONY : clean
-clean :
-ifneq (,$(wildcard $(FLAKE)))
-	rm $(FLAKE)
-endif
-
 .PHONY : help
 help :
 	@echo "Usage:"
