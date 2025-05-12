@@ -37,9 +37,7 @@ help :
 	@printf "     %s\n" "The default target is $(FLAKE)."
 	@echo
 	@printf "     %-19s %s\n" $(FLAKE)    "Initialize $(FLAKE) using $(CHANNEL)."
-	@#echo
 	@printf "     %-19s %s\n" "install"   "Install $(FLAKE) to $(NIX_DARWIN_CONFIG)."
-	@#echo
 	@printf "     %-19s %s\n" "uninstall" "Remove $(NIX_DARWIN_CONFIG) and $(NIX_DARWIN_DIR)."
 	@echo
 	@echo "The following environment variables are available:"
