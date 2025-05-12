@@ -1,4 +1,4 @@
-CHANNEL ?= master # stable is nix-darwin-24.11
+CHANNEL ?= master
 FLAKE = flake.nix
 NIX_DARWIN_DIR = /etc/nix-darwin
 NIX_DARWIN_CONFIG = $(NIX_DARWIN_DIR)/$(FLAKE)
@@ -34,3 +34,22 @@ clean :
 ifneq (,$(wildcard $(FLAKE)))
 	rm $(FLAKE)
 endif
+
+.PHONY : help
+help :
+	@echo "Usage:"
+	@echo
+	@echo "make [target]"
+	@printf "     %s\n" "The default target is $(FLAKE)."
+	@echo
+	@printf "     %-19s %s\n" $(FLAKE)    "Initialize $(FLAKE) using $(CHANNEL)."
+	@#echo
+	@printf "     %-19s %s\n" "install"   "Install $(FLAKE) to $(NIX_DARWIN_CONFIG)."
+	@#echo
+	@printf "     %-19s %s\n" "uninstall" "Remove $(NIX_DARWIN_CONFIG) and $(NIX_DARWIN_DIR)."
+	@echo
+	@echo "The following environment variables are available:"
+	@printf "     %-19s %s\n" "CHANNEL" "The nix-darwin channel to use for initializing a"
+	@printf "     %-19s %s\n" ""        "nix-darwin flake. As of this writing, the unstable"
+	@printf "     %-19s %s\n" ""        "channel is 'master' and the stable channel is"
+	@printf "     %-19s %s\n" ""        "'nix-darwin-24.11'."
