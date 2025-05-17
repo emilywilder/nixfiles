@@ -36,7 +36,49 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    # utilities
+    pkgs.coreutils
+    pkgs.file
+    pkgs.sourceHighlight
+    pkgs.bat
+    pkgs.tree
+    pkgs.pdfgrep
+    pkgs.xz
+    pkgs._7zz
+    pkgs.jq
+    pkgs.shfmt
+    pkgs.graphviz
+    pkgs.shellcheck
+#    pkgs.asdf-vm
+    # editors
+    pkgs.vim
     pkgs.neovim
+    # terminal emulators and multiplexers
+    pkgs.tmux
+    pkgs.kitty
+#    pkgs.hercules
+    # scm
+    pkgs.git
+    # languages
+    pkgs.python313
+    pkgs.python313Packages.pip
+    pkgs.perl
+    pkgs.nodejs
+    pkgs.R
+    pkgs.typescript
+    # build tools
+    pkgs.bmake
+    pkgs.gnumake
+    pkgs.cmake
+    pkgs.yarn
+    # networking utilities
+    pkgs.wget
+    pkgs.socat
+    pkgs.openssh
+    pkgs.nmap
+    # databases
+    pkgs.sqlite
+    pkgs.postgresql
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
