@@ -71,6 +71,7 @@
     pkgs.gnumake
     pkgs.cmake
     pkgs.yarn
+    pkgs.just
     # networking utilities
     pkgs.wget
     pkgs.socat
