@@ -53,6 +53,7 @@
     # editors
     pkgs.vim
     pkgs.neovim
+    pkgs.vscode
     # terminal emulators and multiplexers
     pkgs.tmux
     pkgs.kitty
@@ -65,6 +66,7 @@
     pkgs.perl
     pkgs.nodejs
     pkgs.R
+    pkgs.rstudio
     pkgs.typescript
     # build tools
     pkgs.bmake
