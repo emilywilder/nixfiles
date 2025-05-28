@@ -58,6 +58,7 @@
     darwinConfigurations."athena" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
+        ./macos.nix
         home-manager.darwinModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
