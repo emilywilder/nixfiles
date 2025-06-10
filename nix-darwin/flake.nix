@@ -50,6 +50,10 @@
 
       # allow unfree packages
       nixpkgs.config.allowUnfree = true;
+
+      # nix-darwin now needs to utilize a primary user as part of the
+      # transition from gloabl to user config
+      system.primaryUser = "emily";
     };
   in
   {
