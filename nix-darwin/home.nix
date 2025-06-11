@@ -49,6 +49,7 @@
     pkgs.shfmt
     pkgs.graphviz
     pkgs.shellcheck
+    pkgs.ripgrep
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
