@@ -10,7 +10,7 @@
     # Whether to show external disks, hard drives, connected servers,
     # and removable media on desktop.
     system.defaults.finder.ShowExternalHardDrivesOnDesktop = true;
-    system.defaults.finder.ShowHardDrivesOnDesktop = true;
+    system.defaults.finder.ShowHardDrivesOnDesktop = false;
     system.defaults.finder.ShowMountedServersOnDesktop = true;
     system.defaults.finder.ShowRemovableMediaOnDesktop = true;
 
