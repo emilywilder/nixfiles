@@ -50,6 +50,7 @@
     pkgs.graphviz
     pkgs.shellcheck
     pkgs.ripgrep
+    pkgs.eza
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
