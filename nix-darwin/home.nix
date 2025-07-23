@@ -56,6 +56,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
+    pkgs.rstudio
     # terminal emulators and multiplexers
     pkgs.tmux
     pkgs.kitty
