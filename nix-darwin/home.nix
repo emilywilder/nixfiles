@@ -51,6 +51,8 @@
     pkgs.shellcheck
     pkgs.ripgrep
     pkgs.eza
+    pkgs._1password-cli
+    pkgs.stow
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
@@ -72,6 +74,9 @@
     pkgs.R
     pkgs.rstudio
     pkgs.typescript
+    # racket is not available on arm64-apple-darwin
+#    pkgs.racket
+    pkgs.racket-minimal
     # build tools
     pkgs.bmake
     pkgs.gnumake
