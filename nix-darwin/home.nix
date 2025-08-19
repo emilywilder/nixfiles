@@ -53,6 +53,7 @@
     pkgs.eza
     pkgs._1password-cli
     pkgs.stow
+    pkgs.wipe
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
@@ -88,6 +89,7 @@
     pkgs.socat
     pkgs.openssh
     pkgs.nmap
+    pkgs.iproute2mac
     # databases
     pkgs.sqlite
     pkgs.postgresql
