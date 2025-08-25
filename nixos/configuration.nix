@@ -95,7 +95,7 @@
     wget
     zsh
     git
-    bmake
+    just
     stow
   ];
 
