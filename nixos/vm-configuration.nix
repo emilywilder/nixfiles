@@ -4,6 +4,7 @@
   imports =
     [
       ./nixos-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
