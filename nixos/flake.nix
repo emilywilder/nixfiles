@@ -11,15 +11,15 @@
     { nixpkgs, home-manager, ... }:
     {
       nixosConfigurations = {
-        hostname = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+        nixos = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
           modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.jdoe = ./home.nix;
+              home-manager.users.emily = ./home.nix;
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
