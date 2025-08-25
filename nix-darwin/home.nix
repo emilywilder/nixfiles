@@ -93,9 +93,11 @@
     # databases
     pkgs.sqlite
     pkgs.postgresql
-    # emulators
+    # emulators / virtualization
     pkgs.qemu
     pkgs.utm
+    pkgs.podman
+    pkgs.podman-compose
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
