@@ -10,11 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
-
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -40,8 +35,6 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-  services.getty.helpLine = "\nenp0s1:\n\tIPv4:\t\\4{enp0s1}\n\tIPv6:\t\\6{enp0s1}";
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
