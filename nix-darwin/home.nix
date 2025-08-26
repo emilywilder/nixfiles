@@ -98,6 +98,11 @@
     pkgs.utm
     pkgs.podman
     pkgs.podman-compose
+    # graphically enabled cli tools
+    pkgs.neofetch # generate system info
+    pkgs.tdf  # view pdfs
+    pkgs.yazi # split file manager
+    pkgs.presenterm # view markdown
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
