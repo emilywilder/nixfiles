@@ -45,7 +45,6 @@
     pkgs.python313Packages.pip
     pkgs.perl
     pkgs.nodejs
-    pkgs.R
     pkgs.typescript
     # build tools
     pkgs.bmake
