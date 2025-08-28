@@ -54,6 +54,7 @@
     pkgs._1password-cli
     pkgs.stow
     pkgs.wipe
+    pkgs.fzf
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
