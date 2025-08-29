@@ -55,6 +55,7 @@
     pkgs.stow
     pkgs.wipe
     pkgs.fzf
+    pkgs.atuin
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
