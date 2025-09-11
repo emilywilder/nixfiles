@@ -1,0 +1,21 @@
+#!/usr/bin/env just --justfile
+
+[private]
+default:
+    @just --list
+
+[doc("switch based on local changes")]
+switch:
+    sudo darwin-rebuild switch -I darwin=.
+
+[doc("switch based on global config")]
+switch-global:
+    sudo darwin-rebuild switch
+
+[doc("run uninstaller")]
+uninstall:
+    sudo darwin-uninstaller
+
+[doc("run latest uninstaller")]
+uninstall-latest:
+    sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
