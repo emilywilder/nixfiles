@@ -107,7 +107,9 @@
     pkgs.tdf  # view pdfs
     pkgs.yazi # split file manager
     pkgs.presenterm # view markdown
+    # GUI programs
     pkgs.zotero
+    pkgs.xquartz
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
