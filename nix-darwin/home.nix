@@ -101,6 +101,7 @@
     pkgs.utm
     pkgs.podman
     pkgs.podman-compose
+    pkgs.podman-desktop
     # graphically enabled cli tools
     pkgs.neofetch # generate system info
     pkgs.tdf  # view pdfs
