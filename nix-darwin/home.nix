@@ -56,6 +56,7 @@
     pkgs.wipe
     pkgs.fzf
     pkgs.atuin
+    pkgs.glow # cli markdown viewer
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
