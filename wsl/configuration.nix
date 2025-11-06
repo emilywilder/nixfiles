@@ -57,19 +57,32 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
-      tree
-      fish
-      eza
-      fzf
-      duf
-      git
-      bmake
-      neovim
+      _1password-cli
+      _7zz
+      atuin
       bat
-      ripgrep
+      bmake
+      coreutils
       direnv
+      duf
+      eza
+      file
+      fzf
+      git
       jq
       just
+      neovim
+      pciutils
+      pdfgrep
+      ripgrep
+      shellcheck
+      shfmt
+      sourceHighlight
+      stow
+      tree
+      vim
+      wipe
+      xz
     ];
     openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
