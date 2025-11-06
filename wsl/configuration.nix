@@ -92,4 +92,9 @@
     nix.package = pkgs.lix;
     nix.settings.experimental-features = [ "nix-command flakes" ];
     programs.zsh.enable = true;
+    nixpkgs.config.allowUnfree = true;
+
+    hardware.graphics = {
+      enable = true;
+    };
 }
