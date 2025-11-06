@@ -25,17 +25,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.emacs = {
-    enable = true;
-    extraPackages = epkgs: [
-      epkgs.nix-mode
-      epkgs.magit
-    ];
-  };
-
-  services.gpg-agent = {
-    enable = true;
-    defaultCacheTtl = 1800;
-    enableSshSupport = true;
-  };
+  # Enable direnv
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 }
