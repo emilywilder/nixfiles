@@ -14,7 +14,6 @@
   {
     nixosConfigurations = {
       iris-nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           # Set Git commit hash for version.
           { system.configurationRevision = self.rev or self.dirtyRev or null; }

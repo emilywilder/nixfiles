@@ -8,6 +8,11 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports =
+    [ # Set hardware specific settings.
+      ./hardware-configuration.nix
+    ];
+
   wsl.enable = true;
   wsl.defaultUser = "emily";
   #wsl.wslConf.boot.command = "ip address flush dev eth0";
