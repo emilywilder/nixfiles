@@ -5,13 +5,18 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Set hardware specific settings.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Set hardware specific settings.
+    ./hardware-configuration.nix
+  ];
 
   wsl.enable = true;
   wsl.defaultUser = "emily";
@@ -52,21 +57,21 @@
       PermitRootLogin = "no";
     };
   };
-#  services.openssh.enable = true;
+  #  services.openssh.enable = true;
   users.users.emily = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
-      ];
-    };
-    users.defaultUserShell = pkgs.zsh;
-    nix.package = pkgs.lix;
-    nix.settings.experimental-features = [ "nix-command flakes" ];
-    programs.zsh.enable = true;
-    nixpkgs.config.allowUnfree = true;
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
+    ];
+  };
+  users.defaultUserShell = pkgs.zsh;
+  nix.package = pkgs.lix;
+  nix.settings.experimental-features = [ "nix-command flakes" ];
+  programs.zsh.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
-    hardware.graphics = {
-      enable = true;
-    };
+  hardware.graphics = {
+    enable = true;
+  };
 }
