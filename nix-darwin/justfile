@@ -19,3 +19,7 @@ uninstall:
 [doc("run latest uninstaller")]
 uninstall-latest:
     sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
+
+[doc("update flake lock")]
+update:
+    nix flake update
