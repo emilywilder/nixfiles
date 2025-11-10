@@ -1,9 +1,13 @@
 # nixfiles
-My personal configuration files for [Nix](https://github.com/NixOS/nix) and [home-manager](https://github.com/nix-community/home-manager). Also includes scripts to deploy home-manager and my configuration.
- 
-## Usage
-Included is a GNUmakefile that allows for linking the git directory to my home-manager configuration location, installing home-manager, and adding the nixpkgs channel for home-manager.
+My personal configuration files for [Nix](https://github.com/NixOS/nix) and [home-manager](https://github.com/nix-community/home-manager).
 
-To install, just run `make`.
-To clean up, run `make clean`.
-Refer to the makefile for other targets.
+## Details
+Everything is managed by flakes now.
+`home-manager` is managed by `nix` directly.
+
+## Layout
+Currently, each system has its own directory of configs. This will be consolidated to a single flake in the main directory at some point.
+
+- `nix-darwin`:  contains the configs for my macOS laptop.
+- `nixos`: contains the configs for my old macOS laptop running `NixOS`.
+- `wsl`: contains the configs for my PC `wsl` instance of `NixOS`.
