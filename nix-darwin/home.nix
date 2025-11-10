@@ -57,6 +57,8 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
+    # zsh plugins
+    pkgs.zsh-fzf-tab
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
