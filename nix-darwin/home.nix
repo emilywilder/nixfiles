@@ -57,8 +57,6 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
-    # zsh plugins
-    pkgs.zsh-fzf-tab
 #    pkgs.asdf-vm
     # editors
     pkgs.vim
@@ -66,8 +64,6 @@
     pkgs.vscode
     pkgs.rstudio
     pkgs.texstudio
-    # vim plugins
-    pkgs.vimPlugins.vim-plug
     # terminal emulators and multiplexers
     pkgs.tmux
     pkgs.kitty
