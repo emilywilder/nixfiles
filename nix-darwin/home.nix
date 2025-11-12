@@ -71,8 +71,7 @@
     # scm
     pkgs.git
     # languages
-    pkgs.python313
-    pkgs.python313Packages.pip
+    (pkgs.python3.withPackages (ps: with ps; [ pip ]))
     pkgs.perl
     pkgs.nodejs
     pkgs.R
