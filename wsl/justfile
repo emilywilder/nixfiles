@@ -1,0 +1,17 @@
+#!/usr/bin/env just --justfile
+
+[private]
+default:
+    @just --list
+
+[doc("switch based on local changes")]
+switch:
+    sudo nixos-rebuild switch --flake '.#iris-nixos'
+
+[doc("switch based on global config")]
+switch-global:
+    sudo nixos-rebuild switch
+
+[doc("update flake lock")]
+update:
+    nix flake update
