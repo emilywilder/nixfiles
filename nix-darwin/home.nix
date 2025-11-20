@@ -75,7 +75,6 @@
     pkgs.perl
     pkgs.nodejs
     pkgs.R
-    pkgs.rstudio
     pkgs.typescript
     # racket is not available on arm64-apple-darwin
 #    pkgs.racket
