@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, pkgs-e1ebeec86b77, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -62,7 +62,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
-    pkgs.rstudio
+    pkgs-e1ebeec86b77.rstudio
     pkgs.texstudio
     # terminal emulators and multiplexers
     pkgs.tmux
