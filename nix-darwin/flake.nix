@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # Last good revision for some packages
     nixpkgs-e1ebeec86b77.url = "github:NixOS/nixpkgs/e1ebeec86b771e9d387dd02d82ffdc77ac753abc";
+#    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
