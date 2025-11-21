@@ -78,7 +78,7 @@
     pkgs.typescript
     # racket is not available on arm64-apple-darwin
 #    pkgs.racket
-    pkgs.racket-minimal
+    pkgs-e1ebeec86b77.racket-minimal
     # build tools
     pkgs.bmake
     pkgs.gnumake
@@ -107,7 +107,7 @@
     pkgs.presenterm # view markdown
     # GUI programs
     pkgs.zotero
-    pkgs.xquartz
+    pkgs-e1ebeec86b77.xquartz
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
