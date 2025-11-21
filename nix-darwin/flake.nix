@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # Last revision where RStudio worked
+    # Last good revision for some packages
     nixpkgs-e1ebeec86b77.url = "github:NixOS/nixpkgs/e1ebeec86b771e9d387dd02d82ffdc77ac753abc";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,10 +18,14 @@
     # followed method found from
     # https://github.com/nix-community/home-manager/issues/6036#issuecomment-2661394278
     username = "emily";
-    system = "aarch64-darwin";
-    pkgs-e1ebeec86b77 = import nixpkgs-e1ebeec86b77 {
-      inherit system;
+
+    # As according to:
+    # https://nixos.wiki/wiki/flakes#Importing_packages_from_multiple_channels
+    # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120
+    overlay-e1ebeec86b77 = final: prev: {
+      e1ebeec86b77 = nixpkgs-e1ebeec86b77.legacyPackages.${prev.stdenv.hostPlatform.system};
     };
+
     configuration = { pkgs, ... }: {
       users = {
         users.${username} = {
@@ -29,6 +33,7 @@
             name = "${username}";
         };
       };
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
@@ -70,6 +75,11 @@
     # $ darwin-rebuild build --flake .#athena
     darwinConfigurations."athena" = nix-darwin.lib.darwinSystem {
       modules = [
+        (
+          { config, pkgs, ... }: {
+            nixpkgs.overlays = [ overlay-e1ebeec86b77 ];
+          }
+        )
         configuration
         ./macos.nix
         home-manager.darwinModules.home-manager {
@@ -77,7 +87,6 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.${username} = ./home.nix;
-            extraSpecialArgs = { pkgs-e1ebeec86b77 = pkgs-e1ebeec86b77; };
           };
 
           # Optionally, use home-manager.extraSpecialArgs to pass

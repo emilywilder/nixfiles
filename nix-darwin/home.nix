@@ -1,4 +1,4 @@
-{ config, pkgs, lib, pkgs-e1ebeec86b77, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -62,7 +62,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
-    pkgs-e1ebeec86b77.rstudio
+    pkgs.e1ebeec86b77.rstudio
     pkgs.texstudio
     # terminal emulators and multiplexers
     pkgs.tmux
@@ -78,7 +78,7 @@
     pkgs.typescript
     # racket is not available on arm64-apple-darwin
 #    pkgs.racket
-    pkgs-e1ebeec86b77.racket-minimal
+    pkgs.e1ebeec86b77.racket-minimal
     # build tools
     pkgs.bmake
     pkgs.gnumake
@@ -107,7 +107,7 @@
     pkgs.presenterm # view markdown
     # GUI programs
     pkgs.zotero
-    pkgs-e1ebeec86b77.xquartz
+    pkgs.e1ebeec86b77.xquartz
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
