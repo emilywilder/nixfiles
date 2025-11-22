@@ -62,7 +62,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
-    pkgs.e1ebeec86b77.rstudio
+    pkgs.stable.rstudio
     pkgs.texstudio
     # terminal emulators and multiplexers
     pkgs.tmux
@@ -78,7 +78,7 @@
     pkgs.typescript
     # racket is not available on arm64-apple-darwin
 #    pkgs.racket
-    pkgs.e1ebeec86b77.racket-minimal
+    pkgs.stable.racket-minimal
     # build tools
     pkgs.bmake
     pkgs.gnumake
@@ -107,7 +107,7 @@
     pkgs.presenterm # view markdown
     # GUI programs
     pkgs.zotero
-    pkgs.e1ebeec86b77.xquartz
+    pkgs.stable.xquartz
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

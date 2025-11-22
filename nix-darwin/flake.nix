@@ -3,9 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # Last good revision for some packages
-    nixpkgs-e1ebeec86b77.url = "github:NixOS/nixpkgs/e1ebeec86b771e9d387dd02d82ffdc77ac753abc";
-#    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
@@ -14,7 +12,7 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-e1ebeec86b77, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-stable, home-manager }:
   let
     # followed method found from
     # https://github.com/nix-community/home-manager/issues/6036#issuecomment-2661394278
@@ -23,8 +21,8 @@
     # As according to:
     # https://nixos.wiki/wiki/flakes#Importing_packages_from_multiple_channels
     # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120
-    overlay-e1ebeec86b77 = final: prev: {
-      e1ebeec86b77 = nixpkgs-e1ebeec86b77.legacyPackages.${prev.stdenv.hostPlatform.system};
+    overlay-stable = final: prev: {
+      stable = nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system};
     };
 
     configuration = { pkgs, ... }: {
@@ -78,7 +76,7 @@
       modules = [
         (
           { config, pkgs, ... }: {
-            nixpkgs.overlays = [ overlay-e1ebeec86b77 ];
+            nixpkgs.overlays = [ overlay-stable ];
           }
         )
         configuration
