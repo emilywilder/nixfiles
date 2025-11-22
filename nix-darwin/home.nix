@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -57,7 +62,7 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
-#    pkgs.asdf-vm
+    #    pkgs.asdf-vm
     # editors
     pkgs.vim
     pkgs.neovim
@@ -67,7 +72,7 @@
     # terminal emulators and multiplexers
     pkgs.tmux
     pkgs.kitty
-#    pkgs.hercules
+    #    pkgs.hercules
     # scm
     pkgs.git
     # languages
@@ -77,7 +82,7 @@
     pkgs.R
     pkgs.typescript
     # racket is not available on arm64-apple-darwin
-#    pkgs.racket
+    #    pkgs.racket
     pkgs.stable.racket-minimal
     # build tools
     pkgs.bmake
@@ -102,7 +107,7 @@
     pkgs.podman-desktop
     # graphically enabled cli tools
     pkgs.neofetch # generate system info
-    pkgs.tdf  # view pdfs
+    pkgs.tdf # view pdfs
     pkgs.yazi # split file manager
     pkgs.presenterm # view markdown
     # GUI programs
