@@ -69,7 +69,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
-#    pkgs.stable.rstudio
+    pkgs.stable.rstudio
     pkgs.texstudio
 
     # terminal emulators and multiplexers
