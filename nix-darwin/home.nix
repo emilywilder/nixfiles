@@ -81,9 +81,6 @@
     pkgs.nodejs
     pkgs.R
     pkgs.typescript
-    # racket is not available on arm64-apple-darwin
-    #    pkgs.racket
-    pkgs.stable.racket-minimal
     pkgs.ghc
     # build tools
     pkgs.bmake
