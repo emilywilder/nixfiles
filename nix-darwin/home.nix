@@ -41,6 +41,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
     # utilities
     pkgs.coreutils
     pkgs.file
@@ -62,19 +63,22 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
-    #    pkgs.asdf-vm
+#    pkgs.asdf-vm
+
     # editors
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
 #    pkgs.stable.rstudio
     pkgs.texstudio
+
     # terminal emulators and multiplexers
     pkgs.tmux
     pkgs.kitty
-    #    pkgs.hercules
+
     # scm
     pkgs.git
+
     # languages
     (pkgs.python3.withPackages (ps: with ps; [ pip ]))
     pkgs.perl
@@ -82,6 +86,7 @@
     pkgs.R
     pkgs.typescript
     pkgs.ghc
+
     # build tools
     pkgs.bmake
     pkgs.gnumake
@@ -89,26 +94,31 @@
     pkgs.yarn
     pkgs.just
     pkgs.uv
+
     # networking utilities
     pkgs.wget
     pkgs.socat
     pkgs.openssh
     pkgs.nmap
     pkgs.iproute2mac
+
     # databases
     pkgs.sqlite
     pkgs.postgresql
+
     # emulators / virtualization
     pkgs.qemu
     pkgs.utm
     pkgs.podman
     pkgs.podman-compose
     pkgs.podman-desktop
+
     # graphically enabled cli tools
     pkgs.neofetch # generate system info
     pkgs.tdf # view pdfs
     pkgs.yazi # split file manager
     pkgs.presenterm # view markdown
+
     # GUI programs
     pkgs.zotero
     pkgs.stable.xquartz
