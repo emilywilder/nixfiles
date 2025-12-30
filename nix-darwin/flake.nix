@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # Latest channel statuses can be found here: https://status.nixos.org
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+    nixpkgs-r2505.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
@@ -19,6 +20,7 @@
       nix-darwin,
       nixpkgs,
       nixpkgs-stable,
+      nixpkgs-r2505,
       home-manager,
     }:
     let
@@ -31,6 +33,9 @@
       # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120
       overlay-stable = final: prev: {
         stable = nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system};
+      };
+      overlay-r2505 = final: prev: {
+        r2505 = nixpkgs-r2505.legacyPackages.${prev.stdenv.hostPlatform.system};
       };
 
       configuration =
@@ -86,7 +91,7 @@
           (
             { config, pkgs, ... }:
             {
-              nixpkgs.overlays = [ overlay-stable ];
+              nixpkgs.overlays = [ overlay-stable overlay-r2505 ];
             }
           )
           configuration
