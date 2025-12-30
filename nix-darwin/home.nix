@@ -67,7 +67,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.vscode
-    pkgs.stable.rstudio
+#    pkgs.stable.rstudio
     pkgs.texstudio
     # terminal emulators and multiplexers
     pkgs.tmux
@@ -84,12 +84,14 @@
     # racket is not available on arm64-apple-darwin
     #    pkgs.racket
     pkgs.stable.racket-minimal
+    pkgs.ghc
     # build tools
     pkgs.bmake
     pkgs.gnumake
     pkgs.cmake
     pkgs.yarn
     pkgs.just
+    pkgs.uv
     # networking utilities
     pkgs.wget
     pkgs.socat
