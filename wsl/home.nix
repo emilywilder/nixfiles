@@ -29,6 +29,10 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
+    pkgs.entr # run program on file change
+    pkgs.exiftool # edit metadata
+    pkgs.fdupes # handle duplicate files
+
     # editors
     pkgs.vim
     pkgs.neovim
