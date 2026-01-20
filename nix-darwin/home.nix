@@ -45,6 +45,7 @@
     # utilities
     pkgs.coreutils
     pkgs.file
+    pkgs.util-linux
     pkgs.sourceHighlight
     pkgs.bat
     pkgs.tree
