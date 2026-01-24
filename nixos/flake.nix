@@ -9,21 +9,29 @@
 
   outputs =
     { nixpkgs, home-manager, ... }:
+    let
+      hm-module = [
+        home-manager.nixosModules.home-manager {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.emily = ./home.nix;
+          };
+        }
+      ];
+    in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos-vm = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
-          modules = [
-            ./configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.emily = ./home.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
+          modules = hm-module ++ [
+            ./vm-configuration.nix
+          ];
+        };
+        nixos-macbook = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = hm-module ++ [
+            ./macbook-configuration.nix
           ];
         };
       };
