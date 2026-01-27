@@ -1,6 +1,7 @@
 #!/usr/bin/env just --justfile
 
 mod nix-darwin 'nix-darwin'
+mod nixos
 mod wsl
 
 [private]
