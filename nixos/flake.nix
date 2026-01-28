@@ -15,12 +15,12 @@
         # use specialArgs to pass inputs to the configuration
         nixos-vm = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
-          modules = [ ./vm-configuration.nix ];
+          modules = [ ./UTM/vm-configuration.nix ];
           specialArgs = { inherit inputs; };
         };
         nixos-macbook = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./macbook-configuration.nix ];
+          modules = [ ./MacBookPro14_2/macbook-configuration.nix ];
           specialArgs = { inherit inputs; };
         };
       };

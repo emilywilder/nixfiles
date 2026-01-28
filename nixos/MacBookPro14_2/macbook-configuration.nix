@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./common.nix
+      ../common.nix
     ];
 
   networking.hostName = "nixos-macbook";
