@@ -8,31 +8,20 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
-    let
-      hm-module = [
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.emily = ./home.nix;
-          };
-        }
-      ];
-    in
+    # pass inputs as a named argument
+    inputs@{ nixpkgs, ... }:
     {
       nixosConfigurations = {
+        # use specialArgs to pass inputs to the configuration
         nixos-vm = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
-          modules = hm-module ++ [
-            ./vm-configuration.nix
-          ];
+          modules = [ ./vm-configuration.nix ];
+          specialArgs = { inherit inputs; };
         };
         nixos-macbook = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = hm-module ++ [
-            ./macbook-configuration.nix
-          ];
+          modules = [ ./macbook-configuration.nix ];
+          specialArgs = { inherit inputs; };
         };
       };
     };

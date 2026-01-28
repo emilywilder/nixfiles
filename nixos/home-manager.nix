@@ -1,11 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
-   home-manager.nixosModules.home-manager = {
-     home-manager = {
-       useGlobalPkgs = true;
-       useUserPackages = true;
-       users.emily = ./home.nix;
-     };
-   };
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.emily = ./home.nix;
+      };
+    }
+  ];
 }
