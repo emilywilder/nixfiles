@@ -4,7 +4,7 @@
   outputs =
     { self, nixpkgs }:
     {
-      packages.aarch64-linux.default = self.nixosConfigurations.iso.config.system.build.isoImage;
+      packages.x86_64-linux.default = self.nixosConfigurations.iso.config.system.build.isoImage;
       nixosConfigurations = {
         iso = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
