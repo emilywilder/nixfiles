@@ -23,6 +23,12 @@
                   pkgs.git
                   pkgs.vim
                   pkgs.zsh
+                  pkgs.coreutils
+                  pkgs.bat
+                  pkgs.tmux
+                  pkgs.wget
+                  pkgs.iw
+                  pkgs.wirelesstools
                 ];
                 nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
                 nixpkgs.config.allowUnfree = true;
