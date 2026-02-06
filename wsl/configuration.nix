@@ -70,6 +70,7 @@
   nix.settings.experimental-features = [ "nix-command flakes" ];
   programs.zsh.enable = true;
   nixpkgs.config.allowUnfree = true;
+  programs.nix-ld.enable = true;
 
   hardware.graphics = {
     enable = true;
