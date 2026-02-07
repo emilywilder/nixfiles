@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -23,6 +24,7 @@
           modules = [ ./hosts/minerva ];
           specialArgs = { inherit inputs; };
         };
+        iris-nixos = nixpkgs.lib.nixosSystem (import ./hosts/iris-nixos/flake.nix inputs);
       };
     };
 }

@@ -1,17 +1,4 @@
 {
-  description = "WSL NixOS flake";
-
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs =
-    inputs@{
       self,
       nixpkgs,
       home-manager,
@@ -19,8 +6,8 @@
       ...
     }:
     {
-      nixosConfigurations = {
-        iris-nixos = nixpkgs.lib.nixosSystem {
+      
+        
           modules = [
             # Set Git commit hash for version.
             { system.configurationRevision = self.rev or self.dirtyRev or null; }
@@ -37,7 +24,6 @@
               # arguments to home.nix
             }
           ];
-        };
-      };
-    };
-}
+        
+      
+    }
