@@ -72,10 +72,6 @@
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-  };
-
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
     automatic = true;
