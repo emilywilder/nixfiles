@@ -59,6 +59,7 @@
     pkgs.socat
     pkgs.openssh
     pkgs.nmap
+    pkgs.net-tools
     # databases
     pkgs.sqlite
     pkgs.postgresql
