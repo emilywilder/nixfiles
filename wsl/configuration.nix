@@ -25,6 +25,8 @@
   wsl.enable = true;
   # The name of the default user.
   wsl.defaultUser = "emily";
+  # Whether to enable OpenGL driver from the Windows host.
+  wsl.useWindowsDriver = true;
   # A command to run when the distro is started.
   #wsl.wslConf.boot.command = "ip address flush dev eth0";
   # Generate /etc/resolv.conf through WSL.
