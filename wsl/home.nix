@@ -10,6 +10,7 @@
   home.packages = [
     # utilities
     pkgs.coreutils
+    pkgs.pciutils
     pkgs.file
     pkgs.sourceHighlight
     pkgs.bat
