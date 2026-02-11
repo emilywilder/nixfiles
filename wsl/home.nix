@@ -72,6 +72,9 @@
     pkgs.tdf # view pdfs
     pkgs.yazi # split file manager
     pkgs.presenterm # view markdown
+    # GUI apps
+    # pkgs.jetbrains.idea-oss
+    # pkgs.firefox
   ];
 
   # This value determines the Home Manager release that your
