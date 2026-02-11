@@ -18,9 +18,16 @@
     ./hardware-configuration.nix
   ];
 
+  # WSL
+  # Docs: https://nix-community.github.io/NixOS-WSL/options.html
+
+  # Whether to enable support for running NixOS as a WSL distribution.
   wsl.enable = true;
+  # The name of the default user.
   wsl.defaultUser = "emily";
+  # A command to run when the distro is started.
   #wsl.wslConf.boot.command = "ip address flush dev eth0";
+  # Generate /etc/resolv.conf through WSL.
   #wsl.wslConf.network.generateResolvConf = false;
 
   # This value determines the NixOS release from which the default
