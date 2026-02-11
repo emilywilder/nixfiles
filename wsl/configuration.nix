@@ -49,6 +49,8 @@
   time.timeZone = "America/New_York";
   networking.hostName = "iris-nixos";
   networking.firewall.enable = false;
+  # Disable wpa_supplicant
+  networking.wireless.enable = lib.mkForce false;
   #networking.useDHCP = false;
   #systemd.network = {
   #  enable = true;
