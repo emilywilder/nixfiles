@@ -91,4 +91,6 @@
   # Enable direnv
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  xdg.enable = true;
 }
