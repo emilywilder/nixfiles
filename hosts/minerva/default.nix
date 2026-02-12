@@ -7,5 +7,5 @@
       ./hardware-configuration.nix
     ];
 
-  networking.hostName = "nixos-macbook";
+  networking.hostName = "minerva";
 }

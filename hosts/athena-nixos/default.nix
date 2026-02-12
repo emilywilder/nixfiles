@@ -7,7 +7,7 @@
       ./hardware-configuration.nix
     ];
 
-  networking.hostName = "nixos-vm";
+  networking.hostName = "athena-nixos";
 
   # allow vscode to connect to VM
   programs.nix-ld.enable = true;
