@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./nixos-configuration.nix
+      ./configuration.nix
       ./home-manager.nix
   ];
 
