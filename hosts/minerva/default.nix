@@ -1,9 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports =
     [
-      ../../modules/nixos/common.nix
+      (inputs.self + /modules/nixos/common.nix)
       ./hardware-configuration.nix
     ];
 
