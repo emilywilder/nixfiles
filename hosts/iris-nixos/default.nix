@@ -1,6 +1,5 @@
 {
   self,
-  nixpkgs,
   home-manager,
   nixos-wsl,
   ...
