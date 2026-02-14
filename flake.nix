@@ -27,7 +27,11 @@
           modules = [ ./hosts/minerva ];
           specialArgs = { inherit inputs; };
         };
-        iris-nixos = nixpkgs.lib.nixosSystem (import ./hosts/iris-nixos inputs);
+        iris-nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/iris-nixos ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
