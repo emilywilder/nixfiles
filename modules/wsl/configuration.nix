@@ -47,7 +47,6 @@
   ];
 
   time.timeZone = "America/New_York";
-  networking.hostName = "iris-nixos";
   networking.firewall.enable = false;
   # Disable wpa_supplicant
   networking.wireless.enable = lib.mkForce false;
@@ -61,14 +60,13 @@
   #};
   services.openssh = {
     enable = true;
-    ports = [ 2122 ];
     settings = {
       PasswordAuthentication = false;
       AllowUsers = [ "emily" ];
       PermitRootLogin = "no";
     };
   };
-  #  services.openssh.enable = true;
+  
   users.users.emily = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
