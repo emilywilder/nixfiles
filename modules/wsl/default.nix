@@ -1,16 +1,14 @@
 {
-  self,
-  home-manager,
-  nixos-wsl,
+  inputs,
   ...
 }:
 {
-  modules = [
+  imports = [
     # Set Git commit hash for version.
-    { system.configurationRevision = self.rev or self.dirtyRev or null; }
-    nixos-wsl.nixosModules.wsl
+    { system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null; }
+    inputs.nixos-wsl.nixosModules.wsl
     ./configuration.nix
-    home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
     {
       home-manager = {
         useGlobalPkgs = true;
