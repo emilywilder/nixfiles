@@ -1,21 +1,4 @@
 {
-  description = "nix-darwin system flake";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # Latest channel statuses can be found here: https://status.nixos.org
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
-    nixpkgs-r2505.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs =
-    inputs@{
       self,
       nix-darwin,
       nixpkgs,
@@ -83,10 +66,9 @@
           system.primaryUser = "emily";
         };
     in
-    {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#athena
-      darwinConfigurations."athena" = nix-darwin.lib.darwinSystem {
+      nix-darwin.lib.darwinSystem {
         modules = [
           (
             { config, pkgs, ... }:
@@ -108,6 +90,4 @@
             # arguments to home.nix
           }
         ];
-      };
-    };
-}
+      }
