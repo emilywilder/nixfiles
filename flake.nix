@@ -2,15 +2,19 @@
   description = "NixOS configuration";
 
   inputs = {
+    # Latest channel statuses can be found here: https://status.nixos.org
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # wsl
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # nix-darwin
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
