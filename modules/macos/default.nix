@@ -1,9 +1,5 @@
 {
-  self,
-  nixpkgs,
-  nixpkgs-stable,
-  nixpkgs-r2505,
-  home-manager,
+  inputs,
   ...
 }:
 let
@@ -15,10 +11,10 @@ let
   # https://nixos.wiki/wiki/flakes#Importing_packages_from_multiple_channels
   # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120
   overlay-stable = final: prev: {
-    stable = nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system};
+    stable = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system};
   };
   overlay-r2505 = final: prev: {
-    r2505 = nixpkgs-r2505.legacyPackages.${prev.stdenv.hostPlatform.system};
+    r2505 = inputs.nixpkgs-r2505.legacyPackages.${prev.stdenv.hostPlatform.system};
   };
 
   configuration =
@@ -49,7 +45,7 @@ let
       # programs.fish.enable = true;
 
       # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+      system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
@@ -69,7 +65,7 @@ in
 # Build darwin flake using:
 # $ darwin-rebuild build --flake .#athena
 {
-  modules = [
+  imports = [
     (
       { config, pkgs, ... }:
       {
@@ -81,7 +77,7 @@ in
     )
     configuration
     ./macos.nix
-    home-manager.darwinModules.home-manager
+    inputs.home-manager.darwinModules.home-manager
     {
       home-manager = {
         useGlobalPkgs = true;

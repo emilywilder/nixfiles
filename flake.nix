@@ -46,6 +46,12 @@
           specialArgs = { inherit inputs; };
         };
       };
-      darwinConfigurations."athena" = nix-darwin.lib.darwinSystem (import ./modules/macos inputs);
+      darwinConfigurations = {
+        athena = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [ ./modules/macos ];
+          specialArgs = { inherit inputs; };
+        };
+      };
     };
 }
