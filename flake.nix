@@ -49,7 +49,7 @@
       darwinConfigurations = {
         athena = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          modules = [ ./modules/macos ];
+          modules = [ ./hosts/athena ];
           specialArgs = { inherit inputs; };
         };
       };
