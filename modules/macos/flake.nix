@@ -1,6 +1,5 @@
 {
       self,
-      nix-darwin,
       nixpkgs,
       nixpkgs-stable,
       nixpkgs-r2505,
@@ -69,7 +68,7 @@
     in
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#athena
-      nix-darwin.lib.darwinSystem {
+      {
         modules = [
           (
             { config, pkgs, ... }:

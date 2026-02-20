@@ -26,7 +26,7 @@
 
   outputs =
     # pass inputs as a named argument
-    inputs@{ nixpkgs, ... }:
+    inputs@{ nixpkgs, nix-darwin, ... }:
     {
       nixosConfigurations = {
         # use specialArgs to pass inputs to the configuration
@@ -46,6 +46,6 @@
           specialArgs = { inherit inputs; };
         };
       };
-      darwinConfigurations."athena" = (import ./modules/macos/flake.nix inputs);
+      darwinConfigurations."athena" = nix-darwin.lib.darwinSystem (import ./modules/macos/flake.nix inputs);
     };
 }
