@@ -5,6 +5,7 @@
       nixpkgs-stable,
       nixpkgs-r2505,
       home-manager,
+      ...
     }:
     let
       # followed method found from
