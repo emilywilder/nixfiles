@@ -6,6 +6,14 @@ rebuild := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
 default:
     @just --list
 
+[doc("check flake consistency")]
+check:
+    @nix flake check
+
+[doc("build flake")]
+build:
+    {{rebuild}} build --flake '.#'
+
 [doc("switch based on local changes")]
 switch:
     sudo {{rebuild}} switch --flake '.#'
