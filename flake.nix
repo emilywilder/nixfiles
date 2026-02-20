@@ -46,6 +46,6 @@
           specialArgs = { inherit inputs; };
         };
       };
-      darwinConfigurations."athena" = nix-darwin.lib.darwinSystem (import ./modules/macos/flake.nix inputs);
+      darwinConfigurations."athena" = nix-darwin.lib.darwinSystem (import ./modules/macos inputs);
     };
 }
