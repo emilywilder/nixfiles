@@ -27,6 +27,9 @@ switch: (rebuild "switch")
 switch-global:
     sudo {{rebuild}} switch
 
+[doc("test by building as a dry run")]
+test: (rebuild "build" "--offline --dry-run --show-trace")
+
 [macos]
 [doc("run uninstaller")]
 uninstall:
