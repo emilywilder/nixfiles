@@ -18,7 +18,7 @@ rebuild ARG *OPTS:
     {{ if ARG == "switch" { "sudo " + rebuild } else { rebuild } }} {{ARG}} --flake '{{flake_path}}' {{OPTS}}
 
 [doc("build flake")]
-build: (rebuild "build")
+build *OPTS: (rebuild "build" OPTS)
 
 [doc("switch based on local changes")]
 switch: (rebuild "switch")
@@ -28,7 +28,7 @@ switch-global:
     sudo {{rebuild}} switch
 
 [doc("test by building as a dry run")]
-test: (rebuild "build" "--offline --dry-run --show-trace")
+test: (build "--offline --dry-run --show-trace")
 
 [macos]
 [doc("run uninstaller")]
