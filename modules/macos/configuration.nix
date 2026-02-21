@@ -3,17 +3,13 @@
   ...
 }:
 let
-  # followed method found from
-  # https://github.com/nix-community/home-manager/issues/6036#issuecomment-2661394278
-  username = "emily";
-
   configuration =
     { pkgs, ... }:
     {
       users = {
-        users.${username} = {
-          home = "/Users/${username}";
-          name = "${username}";
+        users.emily = {
+          home = "/Users/emily";
+          name = "emily";
         };
       };
 
