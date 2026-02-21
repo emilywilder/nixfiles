@@ -38,3 +38,6 @@ update:
 
 show-versions:
     @nix profile diff-closures --profile /nix/var/nix/profiles/system
+
+clean:
+    @find . -maxdepth 1 -type l -name result -print -delete
