@@ -64,7 +64,7 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
-#    pkgs.asdf-vm
+    #    pkgs.asdf-vm
 
     # editors
     pkgs.vim
