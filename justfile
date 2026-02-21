@@ -3,6 +3,7 @@
 set shell := ["zsh", "-cu"]
 
 rebuild := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
+flake_path := ".#"
 
 [private]
 default:
@@ -12,13 +13,15 @@ default:
 check:
     @nix flake check
 
+[private]
+rebuild ARG +OPTS="":
+    {{rebuild}} {{ARG}} --flake '{{flake_path}}' {{OPTS}}
+
 [doc("build flake")]
-build:
-    {{rebuild}} build --flake '.#'
+build: (rebuild "build")
 
 [doc("switch based on local changes")]
-switch:
-    sudo {{rebuild}} switch --flake '.#'
+switch: (rebuild "switch")
 
 [doc("switch based on global config")]
 switch-global:
