@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 let
   # As according to:
   # https://nixos.wiki/wiki/flakes#Importing_packages_from_multiple_channels
@@ -13,18 +10,9 @@ let
     r2505 = inputs.nixpkgs-r2505.legacyPackages.${prev.stdenv.hostPlatform.system};
   };
 in
-# Build darwin flake using:
-# $ darwin-rebuild build --flake .#athena
 {
-  imports = [
-    (
-      { config, pkgs, ... }:
-      {
-        nixpkgs.overlays = [
-          overlay-stable
-          overlay-r2505
-        ];
-      }
-    )
+  nixpkgs.overlays = [
+    overlay-stable
+    overlay-r2505
   ];
 }
