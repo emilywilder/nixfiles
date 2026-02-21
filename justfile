@@ -33,11 +33,6 @@ build *OPTS: (rebuild "build" OPTS)
 switch: (rebuild "switch")
 
 [group("rebuild")]
-[doc("switch based on global config")]
-switch-global:
-    sudo {{rebuild}} switch
-
-[group("rebuild")]
 [doc("test by building as a dry run")]
 test: (build "--offline --dry-run --show-trace")
 
