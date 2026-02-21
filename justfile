@@ -14,7 +14,7 @@ check:
     @nix flake check
 
 [private]
-rebuild ARG +OPTS="":
+rebuild ARG *OPTS:
     {{ if ARG == "switch" { "sudo " + rebuild } else { rebuild } }} {{ARG}} --flake '{{flake_path}}' {{OPTS}}
 
 [doc("build flake")]
