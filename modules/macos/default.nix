@@ -10,5 +10,6 @@
     ./configuration.nix
     ./macos.nix
     ./home-manager.nix
+    ./system-version.nix
   ];
 }
