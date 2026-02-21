@@ -1,5 +1,7 @@
 #!/usr/bin/env just --justfile
 
+set shell := ["zsh", "-cu"]
+
 rebuild := if os() == "macos" { "darwin-rebuild" } else { "nixos-rebuild" }
 
 [private]
