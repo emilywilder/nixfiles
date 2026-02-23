@@ -13,11 +13,6 @@
 }:
 
 {
-  imports = [
-    # Set hardware specific settings.
-    ./hardware-configuration.nix
-  ];
-
   # WSL
   # Docs: https://nix-community.github.io/NixOS-WSL/options.html
 
