@@ -34,7 +34,7 @@ switch: (rebuild "switch")
 
 [group("rebuild")]
 [doc("test by building as a dry run")]
-test: (build "--offline --dry-run --show-trace")
+test: (build "--offline --dry-run")
 
 [macos]
 [group("nix-darwin")]
