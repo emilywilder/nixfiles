@@ -1,11 +1,11 @@
-{ inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
     [
-      ./configuration.nix
       ./home-manager.nix
       ./hardware-configuration.nix
+      (inputs.self + /modules/nixos/nixos.nix)
       (inputs.self + /modules/config-revision.nix)
     ];
 
@@ -22,4 +22,19 @@
 
   services.getty.helpLine = "\nenp0s1:\n\tIPv4:\t\\4{enp0s1}\n\tIPv6:\t\\6{enp0s1}";
 
+  users.users.emily = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+      tree
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
+    ];
+  };
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+  system.stateVersion = "24.11"; # Did you read the comment?
 }
