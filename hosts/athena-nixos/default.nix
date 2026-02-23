@@ -6,6 +6,7 @@
       ./configuration.nix
       ./home-manager.nix
       ./hardware-configuration.nix
+      (inputs.self + /modules/config-revision.nix)
     ];
 
   # Use the systemd-boot EFI boot loader.

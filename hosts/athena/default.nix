@@ -9,7 +9,7 @@
     ./configuration.nix
     ./macos.nix
     ./home-manager.nix
-    ./system-version.nix
+    (inputs.self + /modules/config-revision.nix)
   ];
 
   networking.hostName = "athena";

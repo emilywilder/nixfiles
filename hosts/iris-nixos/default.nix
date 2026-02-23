@@ -6,7 +6,7 @@
     ./configuration.nix
     ./hardware-configuration.nix
     ./home-manager.nix
-    ./system-version.nix
+    (inputs.self + /modules/config-revision.nix)
   ];
 
   networking.hostName = "iris-nixos";
