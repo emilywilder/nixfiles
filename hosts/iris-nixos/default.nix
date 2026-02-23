@@ -1,10 +1,12 @@
 { inputs, ... }:
 
 {
-  imports =
-    [
-      (inputs.self + /modules/wsl)
-    ];
+  imports = [
+    inputs.nixos-wsl.nixosModules.wsl
+    ./configuration.nix
+    ./home-manager.nix
+    ./system-version.nix
+  ];
 
   networking.hostName = "iris-nixos";
   services.openssh.ports = [ 2122 ];

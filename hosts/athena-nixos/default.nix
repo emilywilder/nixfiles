@@ -3,9 +3,14 @@
 {
   imports =
     [
-      (inputs.self + /modules/nixos)
+      ./configuration.nix
+      ./home-manager.nix
       ./hardware-configuration.nix
     ];
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "athena-nixos";
 
