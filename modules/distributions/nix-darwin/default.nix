@@ -11,5 +11,16 @@
     (inputs.self + /modules/home)
   ];
 
+  # nix-darwin now needs to utilize a primary user as part of the
+  # transition from gloabl to user config
+  system.primaryUser = config.my.username;
+
+  users = {
+    users.${config.my.username} = {
+      home = "/Users/${config.my.username}";
+      name = config.my.username;
+    };
+  };
+
   nix.gc.automatic = true;
 }
