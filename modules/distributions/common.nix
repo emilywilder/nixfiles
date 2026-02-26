@@ -3,6 +3,7 @@
 , pkgs
 , ...
 }:
+# Common to both nixos and nix-darwin.
 {
   time.timeZone = "America/New_York";
 

@@ -9,9 +9,9 @@
   imports = [
     ./hardware-configuration.nix
     ./home-manager.nix
-    (inputs.self + /modules/nixos/common.nix)
+    (inputs.self + /modules/distributions/nixos)
     (inputs.self + /modules/config-revision.nix)
-    (inputs.self + /modules/wsl.nix)
+    (inputs.self + /modules/platforms/wsl)
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?

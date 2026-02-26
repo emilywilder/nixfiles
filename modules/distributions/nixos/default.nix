@@ -4,8 +4,7 @@
 , ...
 }:
 {
-  # common to both nixos and nix-darwin
-  imports = [ ./common.nix ];
+  imports = [ ../common.nix ];
 
   users.defaultUserShell = pkgs.zsh;
 

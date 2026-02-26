@@ -6,7 +6,7 @@
 
   imports = [
     ./overlays.nix
-    (inputs.self + /modules/nixos/darwin.nix)
+    (inputs.self + /modules/distributions/nix-darwin)
     ./macos.nix
     ./home-manager.nix
     (inputs.self + /modules/config-revision.nix)
