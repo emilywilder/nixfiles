@@ -8,9 +8,11 @@
     ./overlays.nix
     (inputs.self + /modules/distributions/nix-darwin)
     ./macos.nix
-    ./home-manager.nix
     (inputs.self + /modules/config-revision.nix)
   ];
+
+  my.username = "emily";
+  my.home.config = ./home.nix;
 
   networking.hostName = "athena";
 
