@@ -14,6 +14,7 @@
     (inputs.self + /modules/platforms/wsl)
   ];
 
+  my.username = "emily";
   my.openssh.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
   ];
