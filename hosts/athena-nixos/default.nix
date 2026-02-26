@@ -11,6 +11,9 @@
     ];
 
   my.username = "emily";
+  my.openssh.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
+  ];
   
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -31,9 +34,7 @@
     packages = with pkgs; [
       tree
     ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
-    ];
+    openssh.authorizedKeys.keys = config.my.openssh.keys;
   };
 
   # Enable the OpenSSH daemon.
