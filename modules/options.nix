@@ -9,4 +9,9 @@
     type = lib.types.listOf lib.types.str;
     description = "List of authorized SSH keys.";
   };
+
+  options.my.home.config = lib.mkOption {
+    type = lib.types.path;
+    description = "Path to the home-manager configuration for the main user.";
+  };
 }
