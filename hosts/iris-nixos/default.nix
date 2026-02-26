@@ -21,9 +21,6 @@
 
   system.stateVersion = "24.11"; # Did you read the comment?
 
-  # The name of the default user for WSL.
-  wsl.defaultUser = "emily";
-
   networking.hostName = "iris-nixos";
 
   services.openssh = {

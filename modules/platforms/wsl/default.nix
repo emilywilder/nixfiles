@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
@@ -9,6 +9,8 @@
 
   # Whether to enable support for running NixOS as a WSL distribution.
   wsl.enable = true;
+  # The name of the default user for WSL.
+  wsl.defaultUser = config.my.username;
   # Whether to enable OpenGL driver from the Windows host.
   wsl.useWindowsDriver = true;
   # A command to run when the distro is started.
