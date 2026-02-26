@@ -1,10 +1,15 @@
 { config
 , lib
 , pkgs
+, inputs
 , ...
 }:
 {
-  imports = [ ../common.nix ];
+  imports = [
+    ../common.nix
+    inputs.home-manager.nixosModules.home-manager
+    (inputs.self + /modules/home)
+  ];
 
   users.users.${config.my.username} = {
     isNormalUser = true;

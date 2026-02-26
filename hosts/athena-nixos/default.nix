@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ./home-manager.nix
       ./hardware-configuration.nix
       (inputs.self + /modules/distributions/nixos)
       (inputs.self + /modules/config-revision.nix)
