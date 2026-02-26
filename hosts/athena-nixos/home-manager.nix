@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 
 {
   imports = [
@@ -7,7 +7,7 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.emily = ./home.nix;
+        users.${config.custom.username} = ./home.nix;
       };
     }
   ];
