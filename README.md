@@ -20,12 +20,23 @@ This is meant to represent host specific configuration items combined with reusa
 [modules](https://nixos.wiki/wiki/NixOS_modules) for a full system configuration definition.
 
 ### Modules
-Currently, there are modules for each supported platform: `macos`, `nixos`, and `wsl`.
->TODO: This will be separated out into a more granular and reusable layout in the future.
+#### Structure
+Modules are categorized into distributions and platforms.
+- distributions: projects which combine `nix` the language and `nixpkgs`. 
+    - So far there are only `NixOS` and `nix-dawrin`.
+- platforms: machine configurations which allow for the installation of distributions.
+    - These would be things such as containers or VMs.
+
+#### Platforms
+- `wsl`: common configuration items for Windows hosts using `WSL`.
+
+#### Distributions
+- `common.nix`: common configuration items for all platforms.
+- `nixos`: common configuration items for hosts running `NixOS`.
+- `nix-darwin`: common configuration items for `macOS` hosts using `nix-darwin`.
+
+#### Other
+- `config-revision.nix`: set `system.configurationRevision` based on git revision.
 
 ### User Environment
 My user environment is managed by `home-manager` as a module of both `NixOS` and `nix-darwin`.
-
-## TODO:
-Currently, the modules are not quite living up to their conceptual purpose. Rather than being abstract and reusable,
-they contain much of their host specific configurations and redundantly .
