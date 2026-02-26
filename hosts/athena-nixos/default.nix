@@ -27,15 +27,6 @@
 
   services.getty.helpLine = "\nenp0s1:\n\tIPv4:\t\\4{enp0s1}\n\tIPv6:\t\\6{enp0s1}";
 
-  users.users.${config.my.username} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      tree
-    ];
-    openssh.authorizedKeys.keys = config.my.openssh.keys;
-  };
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 

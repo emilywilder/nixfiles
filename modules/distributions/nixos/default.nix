@@ -6,6 +6,15 @@
 {
   imports = [ ../common.nix ];
 
+  users.users.${config.my.username} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+      tree
+    ];
+    openssh.authorizedKeys.keys = config.my.openssh.keys;
+  };
+
   users.defaultUserShell = pkgs.zsh;
 
   nix.gc = {

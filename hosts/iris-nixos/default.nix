@@ -14,6 +14,10 @@
     (inputs.self + /modules/platforms/wsl)
   ];
 
+  my.openssh.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
+  ];
+
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # The name of the default user for WSL.
@@ -51,12 +55,4 @@
   # Refer to the following link for more details:
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
-
-  users.users.emily = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
-    ];
-  };
 }
