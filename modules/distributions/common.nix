@@ -6,7 +6,10 @@
 }:
 # Common to both nixos and nix-darwin.
 {
-  imports = [ (inputs.self + /modules/options.nix) ];
+  imports = [
+    (inputs.self + /modules/options.nix)
+    (inputs.self + /modules/config-revision.nix)
+  ];
 
   time.timeZone = "America/New_York";
 

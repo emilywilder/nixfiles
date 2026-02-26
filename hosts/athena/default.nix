@@ -9,7 +9,6 @@
 {
   imports = [
     (inputs.self + /modules/distributions/nix-darwin)
-    (inputs.self + /modules/config-revision.nix)
     ./overlays.nix
     ./macos.nix
   ];
