@@ -1,10 +1,13 @@
 { config
 , lib
 , pkgs
+, inputs
 , ...
 }:
 # Common to both nixos and nix-darwin.
 {
+  imports = [ (inputs.self + /modules/options.nix) ];
+
   time.timeZone = "America/New_York";
 
   nix.package = pkgs.lix;
