@@ -1,11 +1,17 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
-    ./overlays.nix
     (inputs.self + /modules/distributions/nix-darwin)
-    ./macos.nix
     (inputs.self + /modules/config-revision.nix)
+    ./overlays.nix
+    ./macos.nix
   ];
 
   my.username = "emily";
