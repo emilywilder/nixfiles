@@ -7,7 +7,7 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.${config.custom.username} = ./home.nix;
+        users.${config.my.username} = ./home.nix;
       };
     }
   ];
