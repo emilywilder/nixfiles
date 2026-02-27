@@ -121,7 +121,7 @@
     pkgs.presenterm # view markdown
 
     # GUI programs
-    pkgs.zotero
+    pkgs.nixpkgs-25_05-darwin.zotero
     pkgs.nixpkgs-25_05-darwin.xquartz
   ];
 
