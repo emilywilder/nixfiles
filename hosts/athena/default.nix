@@ -9,8 +9,12 @@
 {
   imports = [
     (inputs.self + /modules/distributions/nix-darwin)
-    (inputs.self + /modules/overlays.nix)
     ./macos.nix
+  ];
+
+  nixpkgs.overlays = [
+    inputs.self.overlays.stable-darwin
+    inputs.self.overlays.nixpkgs-25_05-darwin
   ];
 
   my.username = "emily";
