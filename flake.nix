@@ -29,7 +29,7 @@
     inputs@{ nixpkgs, nix-darwin, ... }:
     {
       # nixpkgs overlays
-      overlays = import ./modules/overlays.nix { inherit inputs; };
+      overlays = import ./overlays { inherit inputs; };
 
       # NixOS configurations
       nixosConfigurations = {
