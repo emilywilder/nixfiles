@@ -4,9 +4,6 @@
   inputs = {
     # Latest channel statuses can be found here: https://status.nixos.org
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    # nix-darwin overlay channels
-    nixpkgs-d1c15b7d5806.url = "github:nixos/nixpkgs/d1c15b7d5806069da59e819999d70e1cec0760bf";
-    nixpkgs-5a0711127cd8.url = "github:nixos/nixpkgs/5a0711127cd8b916c3d3128f473388c8c79df0da";
     # wsl
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
@@ -22,6 +19,11 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # package specific inputs
+    #  zotero
+    nixpkgs-d1c15b7d5806.url = "github:nixos/nixpkgs/d1c15b7d5806069da59e819999d70e1cec0760bf";
+    #  xquartz
+    nixpkgs-5a0711127cd8.url = "github:nixos/nixpkgs/5a0711127cd8b916c3d3128f473388c8c79df0da";
   };
 
   outputs =
