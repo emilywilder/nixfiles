@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772162780,
-        "narHash": "sha256-OvlRpuMKGeCHaGjS4dB9E0O1nIS4vN3Cx2SVl9J/dYo=",
+        "lastModified": 1772218752,
+        "narHash": "sha256-G8nArvOTZXU8DRvrzAdz3Elcj6kA/vMtvY9mrGLATtA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b96418f81b3c1100419bd421538f1d003b47c3e5",
+        "rev": "f3a30376bb9eb2f6f61816be7d6ed954b6d2a3b9",
         "type": "github"
       },
       "original": {
@@ -95,35 +95,35 @@
         "type": "github"
       }
     },
-    "nixpkgs-25_05-darwin": {
+    "nixpkgs-5a0711127cd8": {
       "locked": {
-        "lastModified": 1768649915,
-        "narHash": "sha256-jc21hKogFnxU7KXSVTRmxC7u5D4RHwm9BAvDf5/Z1Uo=",
-        "owner": "NixOS",
+        "lastModified": 1753358140,
+        "narHash": "sha256-J+siEcAJQ3/toO5oMWLFkn1jeRxA6UN+AfuL/Lan85E=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3e3f3c7f9977dc123c23ee21e8085ed63daf8c37",
+        "rev": "5a0711127cd8b916c3d3128f473388c8c79df0da",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-25.05-darwin",
+        "owner": "nixos",
         "repo": "nixpkgs",
+        "rev": "5a0711127cd8b916c3d3128f473388c8c79df0da",
         "type": "github"
       }
     },
-    "nixpkgs-25_11-darwin": {
+    "nixpkgs-d1c15b7d5806": {
       "locked": {
-        "lastModified": 1772068791,
-        "narHash": "sha256-2JWs4yBVGdWHkHAVtGhzRjqHmwCmyxuql5EoAtg/Huc=",
-        "owner": "NixOS",
+        "lastModified": 1771207753,
+        "narHash": "sha256-b9uG8yN50DRQ6A7JdZBfzq718ryYrlmGgqkRm9OOwCE=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a669fd57cfdf64a6d93d8f854958df35009dc46f",
+        "rev": "d1c15b7d5806069da59e819999d70e1cec0760bf",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-25.11-darwin",
+        "owner": "nixos",
         "repo": "nixpkgs",
+        "rev": "d1c15b7d5806069da59e819999d70e1cec0760bf",
         "type": "github"
       }
     },
@@ -133,8 +133,8 @@
         "nix-darwin": "nix-darwin",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-25_05-darwin": "nixpkgs-25_05-darwin",
-        "nixpkgs-25_11-darwin": "nixpkgs-25_11-darwin"
+        "nixpkgs-5a0711127cd8": "nixpkgs-5a0711127cd8",
+        "nixpkgs-d1c15b7d5806": "nixpkgs-d1c15b7d5806"
       }
     }
   },

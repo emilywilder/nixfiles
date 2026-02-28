@@ -13,8 +13,8 @@
   ];
 
   nixpkgs.overlays = [
-    inputs.self.overlays.stable-darwin
-    inputs.self.overlays.nixpkgs-25_05-darwin
+    inputs.self.overlays.nixpkgs-5a0711127cd8
+    inputs.self.overlays.nixpkgs-d1c15b7d5806
   ];
 
   my.username = "emily";

@@ -121,8 +121,10 @@
     pkgs.presenterm # view markdown
 
     # GUI programs
-    pkgs.nixpkgs-25_05-darwin.zotero
-    pkgs.nixpkgs-25_05-darwin.xquartz
+    # last working: d1c15b7d5806069da59e819999d70e1cec0760bf
+    pkgs.nixpkgs-d1c15b7d5806.zotero
+    # last working: 5a0711127cd8b916c3d3128f473388c8c79df0da
+    pkgs.nixpkgs-5a0711127cd8.xquartz
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

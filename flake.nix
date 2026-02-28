@@ -5,8 +5,8 @@
     # Latest channel statuses can be found here: https://status.nixos.org
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # nix-darwin overlay channels
-    nixpkgs-25_11-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
-    nixpkgs-25_05-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs-d1c15b7d5806.url = "github:nixos/nixpkgs/d1c15b7d5806069da59e819999d70e1cec0760bf";
+    nixpkgs-5a0711127cd8.url = "github:nixos/nixpkgs/5a0711127cd8b916c3d3128f473388c8c79df0da";
     # wsl
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
