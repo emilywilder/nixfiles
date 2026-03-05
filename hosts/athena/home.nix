@@ -115,7 +115,7 @@
     pkgs.podman-desktop
 
     # graphically enabled cli tools
-    pkgs.neofetch # generate system info
+    pkgs.fastfetch # generate system info
     pkgs.tdf # view pdfs
     pkgs.yazi # split file manager
     pkgs.presenterm # view markdown
