@@ -20,10 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # package specific inputs
-    #  zotero
-    nixpkgs-d1c15b7d5806.url = "github:nixos/nixpkgs/d1c15b7d5806069da59e819999d70e1cec0760bf";
-    #  xquartz
-    nixpkgs-5a0711127cd8.url = "github:nixos/nixpkgs/5a0711127cd8b916c3d3128f473388c8c79df0da";
+    #  xquartz::quartz-wm
+    nixpkgs-59db8b663c9c.url = "github:nixos/nixpkgs/59db8b663c9c0d9936b5ce73372c50540aee1357";
   };
 
   outputs =
