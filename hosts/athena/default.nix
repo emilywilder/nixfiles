@@ -1,9 +1,8 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
+{ config
+, lib
+, pkgs
+, inputs
+, ...
 }:
 
 {
@@ -12,9 +11,7 @@
     ./macos.nix
   ];
 
-  nixpkgs.overlays = [
-    inputs.self.overlays.nixpkgs-59db8b663c9c
-  ];
+  nixpkgs.overlays = [];
 
   my.username = "emily";
   my.home.config = ./home.nix;

@@ -19,9 +19,6 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # package specific inputs
-    #  xquartz::quartz-wm
-    nixpkgs-59db8b663c9c.url = "github:nixos/nixpkgs/59db8b663c9c0d9936b5ce73372c50540aee1357";
   };
 
   outputs =

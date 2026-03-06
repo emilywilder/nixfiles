@@ -122,7 +122,6 @@
 
     # GUI programs
     pkgs.zotero
-    pkgs.nixpkgs-59db8b663c9c.xquartz
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -4,8 +4,4 @@
   # https://nixos.wiki/wiki/flakes#Importing_packages_from_multiple_channels
   # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120
 
-  nixpkgs-59db8b663c9c = final: prev: {
-    nixpkgs-59db8b663c9c =
-      inputs.nixpkgs-59db8b663c9c.legacyPackages.${prev.stdenv.hostPlatform.system};
-  };
 }
