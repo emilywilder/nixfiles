@@ -34,9 +34,9 @@
                 nixpkgs.config.allowUnfree = true;
                 # nixpkgs.config.permittedInsecurePackages = [
                 # "broadcom-sta-6.30.223.271-59-6.12.67"
-              # ];
+                # ];
                 boot.kernelModules = [ "brcmfmac" ];
-                boot.kernelParams = [ "brcmfmac.feature_disable=0x82000"];
+                boot.kernelParams = [ "brcmfmac.feature_disable=0x82000" ];
                 # boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
                 boot.blacklistedKernelModules = [
                   "b43"
