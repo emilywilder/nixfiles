@@ -1,9 +1,8 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
+{ config
+, lib
+, pkgs
+, inputs
+, ...
 }:
 # Common to both nixos and nix-darwin.
 {
@@ -14,8 +13,11 @@
 
   time.timeZone = "America/New_York";
 
-  nix.package = pkgs.lix;
-  nix.settings.experimental-features = [ "nix-command flakes" ];
+  nix = {
+    package = pkgs.lix;
+    settings.experimental-features = [ "nix-command flakes" ];
+    channel.enable = false;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
