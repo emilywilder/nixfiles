@@ -5,7 +5,7 @@
   ...
 }:
 {
-  # Allow vscode to connect to VM
+  # Allow vscode to connect to VM/container
   programs.nix-ld.enable = true;
 
   # Enable the OpenSSH daemon.
