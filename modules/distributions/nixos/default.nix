@@ -12,16 +12,16 @@
     (inputs.self + /modules/home)
   ];
 
-  users.users.${config.my.username} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      tree
-    ];
-    openssh.authorizedKeys.keys = config.my.openssh.keys;
+  users = {
+    users.${config.my.username} = {
+      # /home/user
+      isNormalUser = true;
+      # sudo
+      extraGroups = [ "wheel" ];
+      openssh.authorizedKeys.keys = config.my.openssh.keys;
+    };
+    defaultUserShell = pkgs.zsh;
   };
-
-  users.defaultUserShell = pkgs.zsh;
 
   nix.gc = {
     automatic = true;
