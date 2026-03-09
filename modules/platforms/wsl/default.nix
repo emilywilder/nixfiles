@@ -1,7 +1,13 @@
-{ config, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
+    (inputs.self + /modules/platforms/virtualized)
   ];
 
   # WSL
@@ -17,4 +23,9 @@
   #wsl.wslConf.boot.command = "ip address flush dev eth0";
   # Generate /etc/resolv.conf through WSL.
   #wsl.wslConf.network.generateResolvConf = false;
+
+  # Let windows handle firewall in mirrored mode.
+  networking.firewall.enable = false;
+  # Disable wpa_supplicant
+  networking.wireless.enable = lib.mkForce false;
 }
