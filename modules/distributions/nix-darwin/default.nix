@@ -9,7 +9,7 @@
   imports = [
     ../common.nix
     inputs.home-manager.darwinModules.home-manager
-    (inputs.self + /modules/home)
+    (inputs.self + /modules/home-manager)
   ];
 
   # nix-darwin now needs to utilize a primary user as part of the

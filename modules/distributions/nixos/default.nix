@@ -9,7 +9,7 @@
   imports = [
     ../common.nix
     inputs.home-manager.nixosModules.home-manager
-    (inputs.self + /modules/home)
+    (inputs.self + /modules/home-manager)
   ];
 
   users = {
