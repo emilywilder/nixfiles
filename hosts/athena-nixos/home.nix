@@ -3,6 +3,7 @@
   lib,
   pkgs,
   inputs,
+  my,
   ...
 }:
 
@@ -13,8 +14,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "emily";
-  home.homeDirectory = "/home/emily";
+  home.username = my.username;
+  home.homeDirectory = "/home/${my.username}";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

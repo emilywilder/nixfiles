@@ -3,6 +3,7 @@
   lib,
   pkgs,
   inputs,
+  my,
   ...
 }:
 
@@ -13,8 +14,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "emily";
-  home.homeDirectory = "/home/emily";
+  home.username = my.username;
+  home.homeDirectory = "/home/${my.username}";
 
   # Packages that should be installed to the user profile.
   home.packages = [
