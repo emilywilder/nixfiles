@@ -1,6 +1,16 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
+  imports = [
+    (inputs.self + /modules/home)
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "emily";
@@ -58,11 +68,4 @@
     pkgs.openssh
     pkgs.nmap
   ];
-
-  # Enable direnv
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

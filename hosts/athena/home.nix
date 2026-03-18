@@ -1,11 +1,16 @@
 {
   config,
-  pkgs,
   lib,
+  pkgs,
+  inputs,
   ...
 }:
 
 {
+  imports = [
+    (inputs.self + /modules/home)
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
@@ -158,11 +163,4 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  # Enable direnv
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

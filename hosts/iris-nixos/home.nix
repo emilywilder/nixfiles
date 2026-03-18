@@ -1,6 +1,16 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
+  imports = [
+    (inputs.self + /modules/home)
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "emily";
@@ -86,13 +96,4 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "25.05";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  # Enable direnv
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  xdg.enable = true;
 }

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -9,5 +10,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${config.my.username} = config.my.home.config;
+    extraSpecialArgs = { inherit inputs; };
   };
 }
