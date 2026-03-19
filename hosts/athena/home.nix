@@ -3,6 +3,7 @@
   lib,
   pkgs,
   inputs,
+  my,
   ...
 }:
 
@@ -15,8 +16,8 @@
   # manage.
 
   # These are managed by the nix-darwin module
-  # home.username = "emily";
-  # home.homeDirectory = "/Users/emily";
+  home.username = my.username;
+  home.homeDirectory = "/Users/${my.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
