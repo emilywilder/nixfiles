@@ -14,7 +14,6 @@ let
   packageNameList = pl: sortUnique (getPackageNames pl);
 in
 {
-  # not git revision of flake, just of nixpkgs
   "revisions" = {
     "nixpkgs" = config.system.nixpkgsRevision;
     "configuration" = config.system.configurationRevision;
