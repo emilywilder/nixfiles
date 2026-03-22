@@ -6,7 +6,7 @@
 #   nix eval -f installed.nix --json | jq .home
 
 let
-  flake = builtins.getFlake "/Users/emily/src/nixfiles/nix-darwin";
+  flake = builtins.getFlake "/Users/emily/src/nixfiles";
   config = flake.darwinConfigurations.athena.config;
   pkgs = flake.inputs.nixpkgs;
   getPackageNames = builtins.map (p: "${p.name}");
