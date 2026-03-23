@@ -12,8 +12,6 @@
     (inputs.self + /modules/home)
   ];
 
-  home.username = my.username;
-  home.homeDirectory = "/Users/${my.username}";
   home.stateVersion = "24.11";
 
   home.packages = [
