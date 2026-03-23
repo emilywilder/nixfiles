@@ -7,7 +7,10 @@
 }:
 {
   # Add commonly used packages
-  imports = [ ./packages ];
+  imports = [
+    ./packages
+    ./programs
+  ];
 
   # User details
   home.username = my.username;
@@ -16,13 +19,6 @@
       "/Users/${my.username}"
     else
       "/home/${my.username}";
-
-  # Enable direnv
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   xdg.enable = true;
 }
