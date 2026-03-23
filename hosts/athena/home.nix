@@ -18,13 +18,8 @@
 
   home.packages = [
     # utilities
-    pkgs.util-linux
     pkgs.graphviz
     pkgs._1password-cli
-    pkgs.fzf
-    pkgs.atuin
-    pkgs.glow # cli markdown viewer
-    #    pkgs.asdf-vm
 
     # editors
     pkgs.vscode
@@ -33,11 +28,6 @@
 
     # terminal emulators and multiplexers
     pkgs.kitty
-
-    # languages
-    (pkgs.python3.withPackages (ps: with ps; [ pip ]))
-    pkgs.R
-    pkgs.ghc
 
     # build tools
     pkgs.uv
