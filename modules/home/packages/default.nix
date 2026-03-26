@@ -46,10 +46,6 @@
     pkgs.ghc
 
     # build tools
-    pkgs.bmake
-    pkgs.gnumake
-    pkgs.cmake
-    pkgs.yarn
     pkgs.just
 
     # networking utilities
