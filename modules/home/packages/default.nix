@@ -27,6 +27,7 @@
     pkgs.fzf
     pkgs.atuin
     pkgs.glow # cli markdown viewer
+    pkgs.imagemagick # cli image processing
 
     # editors
     pkgs.vim
