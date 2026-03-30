@@ -12,7 +12,9 @@
     ./macos.nix
   ];
 
-  nixpkgs.overlays = [ ];
+  nixpkgs.overlays = [
+    inputs.self.overlays.nixpkgs-darwin
+  ];
 
   my.username = "emily";
   my.home.config = ./home.nix;

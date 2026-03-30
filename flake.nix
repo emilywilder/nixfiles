@@ -4,6 +4,7 @@
   inputs = {
     # Latest channel statuses can be found here: https://status.nixos.org
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.11-darwin";
     # wsl
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
