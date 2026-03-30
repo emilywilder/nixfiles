@@ -21,7 +21,7 @@
 
     # editors
     pkgs.vscode
-    pkgs.rstudio
+    pkgs.nixpkgs-darwin.rstudio
     pkgs.texstudio
 
     # terminal emulators and multiplexers
