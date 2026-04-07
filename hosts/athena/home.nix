@@ -21,7 +21,7 @@
 
     # editors
     pkgs.vscode
-    pkgs.nixpkgs-darwin.rstudio
+#    pkgs.rstudio     # currently, electron apps are not reliably available in nixpkgs
     pkgs.texstudio
 
     # terminal emulators and multiplexers
