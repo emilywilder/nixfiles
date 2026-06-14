@@ -51,6 +51,6 @@
     pkgs.presenterm # view markdown
 
     # GUI programs
-#    pkgs.zotero    # not using until version 9 builds
+    pkgs.zotero
   ];
 }
