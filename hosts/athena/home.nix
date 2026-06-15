@@ -52,5 +52,6 @@
 
     # GUI programs
     pkgs.zotero
+    pkgs.obsidian
   ];
 }
