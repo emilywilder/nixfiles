@@ -61,6 +61,6 @@
     #FIXME universalaccess.closeViewScrollWheelToggle = true;
 
     # The filesystem path to which screencaptures should be written.
-    #FIXME screencapture.location = "${HOME}/Pictures/Screenshots";
+    screencapture.location = "/Users/${config.my.username}/Pictures/Screenshots";
   };
 }
