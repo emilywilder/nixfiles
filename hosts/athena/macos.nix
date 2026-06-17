@@ -5,9 +5,6 @@
 
   system.defaults = {
     NSGlobalDomain = {
-      # Configures the trackpad tap behavior. Mode 1 enables tap to click.
-      "com.apple.mouse.tapBehavior" = null;
-
       # Whether to enable moving window by holding anywhere on it like on Linux.
       # The default is false.
       NSWindowShouldDragOnGesture = true;
@@ -62,5 +59,8 @@
 
     # The filesystem path to which screencaptures should be written.
     screencapture.location = "/Users/${config.my.username}/Pictures/Screenshots";
+
+    # Whether to enable tap to click. The default is false.
+    trackpad.Clicking = false;
   };
 }
