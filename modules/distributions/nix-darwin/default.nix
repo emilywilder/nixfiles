@@ -19,7 +19,6 @@
   users = {
     users.${config.my.username} = {
       home = "/Users/${config.my.username}";
-      name = config.my.username;
     };
   };
 

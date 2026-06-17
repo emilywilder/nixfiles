@@ -12,6 +12,10 @@
     (inputs.self + /modules/config-revision.nix)
   ];
 
+  users.users.${config.my.username} = {
+    openssh.authorizedKeys.keys = config.my.openssh.keys;
+  };
+
   time.timeZone = "America/New_York";
 
   nix = {

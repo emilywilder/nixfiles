@@ -14,11 +14,8 @@
 
   users = {
     users.${config.my.username} = {
-      # /home/user
       isNormalUser = true;
-      # sudo
       extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = config.my.openssh.keys;
     };
     defaultUserShell = pkgs.zsh;
   };
