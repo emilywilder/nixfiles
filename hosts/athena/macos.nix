@@ -57,8 +57,8 @@
     # Allow users to login to the machine as guests using the Guest account. Default is true.
     loginwindow.GuestEnabled = false;
 
-    #Use scroll gesture with the Ctrl (^) modifier key to zoom. The default is false.
-    #FIXME universalaccess.closeViewScrollWheelToggle = true;
+    # Use scroll gesture with the Ctrl (^) modifier key to zoom. The default is false.
+    universalaccess.closeViewScrollWheelToggle = true;
 
     # The filesystem path to which screencaptures should be written.
     screencapture.location = "/Users/${config.my.username}/Pictures/Screenshots";
