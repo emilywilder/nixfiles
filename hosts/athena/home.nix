@@ -23,6 +23,7 @@
     pkgs.vscode
     pkgs.rstudio
     pkgs.texstudio
+    pkgs.zed-editor
 
     # terminal emulators and multiplexers
     pkgs.kitty
