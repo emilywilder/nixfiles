@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     (inputs.self + /modules/distributions/nixos)
     (inputs.self + /modules/platforms/vm)
+    (inputs.self + /modules/distributions/nixos/gnome)
   ];
 
   my.username = "emily";
@@ -18,14 +19,6 @@
   my.openssh.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMDk7MyQ+p48rILdmYb9A1VJwvpHrRgJReLpT0LnND5"
   ];
-
-  # GNOME https://wiki.nixos.org/wiki/GNOME
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.gnome.core-apps.enable = true;
-  services.gnome.core-developer-tools.enable = true;
-  services.gnome.games.enable = false;
-  environment.gnome.excludePackages = with pkgs; [ gnome-tour gnome-user-docs ];
 
   # Clipboard sharing
   services.spice-vdagentd.enable = true;

@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     (inputs.self + /modules/distributions/nixos)
     (inputs.self + /modules/platforms/wsl)
+    (inputs.self + /modules/distributions/nixos/gnome)
   ];
 
   my.username = "emily";
@@ -25,13 +26,4 @@
   networking.hostName = "iris-nixos";
 
   system.stateVersion = "24.11"; # Did you read the comment?
-
-  # Desktop
-  services.dbus.enable = true;
-  security.polkit.enable = true;
-  programs.dconf.enable = true;
-
-  # Gnome
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
 }
