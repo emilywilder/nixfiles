@@ -40,3 +40,6 @@ Modules are categorized into distributions and platforms.
 
 ### User Environment
 My user environment is managed by `home-manager` as a module of both `NixOS` and `nix-darwin`.
+
+## Helpful Notes
+- On `NixOS` hosts, you can do `nixos-rebuild repl` to inspect the configuration.
