@@ -14,6 +14,7 @@
 
   nixpkgs.overlays = [
     inputs.self.overlays.nixpkgs-darwin
+    inputs.self.overlays.pinnedPackages
   ];
 
   my.username = "emily";
