@@ -20,11 +20,13 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # zed-editor
+    pinnedZedEditor.url = "github:nixos/nixpkgs/5a722a7155bfc9fbe657f28d26b71860d95324bc";
   };
 
   outputs =
     # pass inputs as a named argument
-    inputs@{ nixpkgs, nix-darwin, ... }:
+    inputs@{ nixpkgs, nix-darwin, pinnedZedEditor, ... }:
     {
       # nixpkgs overlays
       overlays = import ./overlays { inherit inputs; };

@@ -14,5 +14,7 @@
   pinnedPackages = final: prev: {
     # For each pkgName, add attribute as such:
     # pkgName = inputs.pkgNameUrl.legacyPackages.${prev.stdenv.hostPlatform.system}.pkgName;
+    zed-editor =
+      inputs.pinnedZedEditor.legacyPackages.${prev.stdenv.hostPlatform.system}.zed-editor;
   };
 }

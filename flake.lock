@@ -111,13 +111,30 @@
         "type": "github"
       }
     },
+    "pinnedZedEditor": {
+      "locked": {
+        "lastModified": 1781328464,
+        "narHash": "sha256-j9uBlHI0eJ9zWU9IlF6SlBBPdeJu30hcvar31IRKHpw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5a722a7155bfc9fbe657f28d26b71860d95324bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5a722a7155bfc9fbe657f28d26b71860d95324bc",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-darwin": "nixpkgs-darwin"
+        "nixpkgs-darwin": "nixpkgs-darwin",
+        "pinnedZedEditor": "pinnedZedEditor"
       }
     }
   },
