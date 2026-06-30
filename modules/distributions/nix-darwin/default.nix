@@ -12,6 +12,11 @@
     (inputs.self + /modules/home-manager)
   ];
 
+  nixpkgs.overlays = [
+    inputs.self.overlays.nixpkgs-darwin
+    inputs.self.overlays.pinnedPackages
+  ];
+
   # nix-darwin now needs to utilize a primary user as part of the
   # transition from gloabl to user config
   system.primaryUser = config.my.username;
