@@ -51,5 +51,8 @@ uninstall-latest:
 show-versions:
     @nix profile diff-closures --profile /nix/var/nix/profiles/system
 
+inspect:
+    @nix repl {{flake_path}}
+
 clean:
     @find . -maxdepth 1 -type l -name result -print -delete
