@@ -22,6 +22,8 @@
     pkgs.entr # run program on file change
     pkgs.exiftool # edit metadata
     pkgs.fdupes # handle duplicate files
+    pkgs.ollama # local LLM inference
+    pkgs.claude-code # use claude in CLI
 
     # networking utilities
     pkgs.net-tools
