@@ -23,7 +23,8 @@
   #wsl.wslConf.boot.command = "ip address flush dev eth0";
   # Generate /etc/resolv.conf through WSL.
   #wsl.wslConf.network.generateResolvConf = false;
-
+  # Whether to enable shortcuts for GUI applications in the windows start menu. (Default: false)
+  wsl.startMenuLaunchers = true;
   # Let windows handle firewall in mirrored mode.
   networking.firewall.enable = false;
   # Disable wpa_supplicant
