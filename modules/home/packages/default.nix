@@ -28,6 +28,7 @@
     pkgs.atuin
     pkgs.glow # cli markdown viewer
     pkgs.imagemagick # cli image processing
+    pkgs.nix-direnv
 
     # editors
     pkgs.vim
