@@ -55,5 +55,6 @@
     pkgs.socat
     pkgs.openssh
     pkgs.nmap
+    pkgs.dnsutils # Network diagnostics (e.g., dig)
   ];
 }
