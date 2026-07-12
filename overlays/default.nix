@@ -15,6 +15,10 @@
     # For each pkgName, add attribute as such:
     # pkgName = inputs.pkgNameUrl.legacyPackages.${prev.stdenv.hostPlatform.system}.pkgName;
     zed-editor =
-      inputs.pinnedZedEditor.legacyPackages.${prev.stdenv.hostPlatform.system}.zed-editor;
+      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system}.zed-editor;
+    R =
+      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system}.R;
+    rstudio =
+      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system}.rstudio;
   };
 }
