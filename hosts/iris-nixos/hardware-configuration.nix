@@ -13,6 +13,9 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = [
+      pkgs.rocmPackages.clr.icd
+    ];
   };
 
   # Fix for d3d12. the windows radeon driver requires openssl
