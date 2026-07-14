@@ -12,6 +12,11 @@
     (inputs.self + /modules/config-revision.nix)
   ];
 
+  nixpkgs.overlays = [
+    inputs.self.overlays.stable-packages
+    inputs.self.overlays.pins
+  ];
+
   users.users.${config.my.username} = {
     openssh.authorizedKeys.keys = config.my.openssh.keys;
   };

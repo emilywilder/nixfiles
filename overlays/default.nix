@@ -1,24 +1,29 @@
-{ inputs, ... }:
 {
-  # As according to:
-  # https://nixos.wiki/wiki/flakes#Importing_packages_from_multiple_channels
-  # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120
-  # https://www.aalbacetef.io/blog/nix-pinning-a-specific-package-version-in-a-flake-using-overlays/
+  inputs,
+  ...
+}:
+{
+  # channels
+  stable-packages =
+    final: prev:
+    let
+      system = prev.stdenv.system;
+      channel = if prev.stdenv.isDarwin then inputs.nixpkgs-darwin else inputs.nixpkgs-nixos;
+    in
+    {
+      stable = channel.legacyPackages.${system};
+    };
 
-  nixpkgs-darwin = final: prev: {
-    nixpkgs-darwin =
-      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system};
-  };
-
-  # set of packages pinned to specific nixpkgs hashes
-  pinnedPackages = final: prev: {
-    # For each pkgName, add attribute as such:
-    # pkgName = inputs.pkgNameUrl.legacyPackages.${prev.stdenv.hostPlatform.system}.pkgName;
-    zed-editor =
-      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system}.zed-editor;
-    R =
-      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system}.R;
-    rstudio =
-      inputs.nixpkgs-darwin.legacyPackages.${prev.stdenv.hostPlatform.system}.rstudio;
-  };
+  # packages
+  pins =
+    final: prev:
+    # all platforms
+    {
+    }
+    # darwin specific
+    // prev.lib.attrsets.optionalAttrs prev.stdenv.isDarwin {
+      R = final.stable.R;
+      rstudio = final.stable.rstudio;
+      zed-editor = final.stable.zed-editor;
+    };
 }
