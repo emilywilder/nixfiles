@@ -19,6 +19,10 @@
     pkgs.graphviz
     pkgs._1password-cli
 
+    # ai
+    pkgs.ollama # local LLM inference
+    pkgs.claude-code # use claude in CLI
+
     # editors
     pkgs.vscode
     pkgs.rstudio
