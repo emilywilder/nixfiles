@@ -24,7 +24,6 @@
     pkgs.fdupes # handle duplicate files
     pkgs.ollama # local LLM inference
     pkgs.claude-code # use claude in CLI
-    pkgs.powershell
 
     # networking utilities
     pkgs.net-tools
