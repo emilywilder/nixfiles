@@ -32,7 +32,7 @@
     pkgs.sqlite
     pkgs.postgresql
 
-    # emulators / virtualization
+    # virtualization
     pkgs.qemu
     pkgs.podman
     pkgs.podman-compose
