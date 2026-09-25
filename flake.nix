@@ -27,10 +27,8 @@
     # pass inputs as a named argument
     inputs@{ nixpkgs, nix-darwin, ... }:
     {
-      # nixpkgs overlays
       overlays = import ./overlays { inherit inputs; };
 
-      # NixOS configurations
       nixosConfigurations = {
         # use specialArgs to pass inputs to the configuration
         athena-nixos = nixpkgs.lib.nixosSystem {
@@ -45,7 +43,6 @@
         };
       };
 
-      # nix-darwin configurations
       darwinConfigurations = {
         athena = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
