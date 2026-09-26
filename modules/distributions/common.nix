@@ -27,6 +27,12 @@
     package = pkgs.lix;
     settings.experimental-features = [ "nix-command flakes" ];
     channel.enable = false;
+    registry = {
+      nixpkgs.flake = inputs.nixpkgs;
+      nixpkgs-nixos.flake = inputs.nixpkgs-nixos;
+      nixpkgs-nixos-unstable.flake = inputs.nixpkgs-nixos-unstable;
+      nixpkgs-darwin.flake = inputs.nixpkgs-darwin;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
