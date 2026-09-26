@@ -30,6 +30,17 @@
     {
       overlays = import ./overlays { inherit inputs; };
 
+      devShells = builtins.mapAttrs (system: pkgs: {
+        datascience = pkgs.mkShell {
+          packages = with pkgs; [
+            (pkgs.python3.withPackages (ps: with ps; [
+              pip numpy pandas matplotlib seaborn scipy statsmodels plotly torch torchvision
+            ]))
+            pkgs.uv
+          ];
+        };
+      }) nixpkgs.legacyPackages;
+
       nixosConfigurations = {
         # use specialArgs to pass inputs to the configuration
         athena-nixos = nixpkgs.lib.nixosSystem {
