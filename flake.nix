@@ -30,6 +30,8 @@
     {
       overlays = import ./overlays { inherit inputs; };
 
+      formatter = builtins.mapAttrs (system: pkgs: pkgs.nixfmt-tree ) inputs.nixpkgs.legacyPackages;
+
       devShells = builtins.mapAttrs (system: pkgs: {
         datascience = pkgs.mkShell {
           packages = with pkgs; [
