@@ -32,8 +32,5 @@
     }
     # darwin specific
     // prev.lib.attrsets.optionalAttrs prev.stdenv.hostPlatform.isDarwin {
-      R = final.stable.R;
-      rstudio = final.stable.rstudio;
-      zed-editor = final.stable.zed-editor;
     };
 }
