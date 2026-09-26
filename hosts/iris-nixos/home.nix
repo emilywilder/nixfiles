@@ -44,8 +44,8 @@
     pkgs.presenterm # view markdown
 
     # GUI apps
-     pkgs.jetbrains.idea
-     pkgs.jetbrains.pycharm
-     pkgs.firefox
+    pkgs.jetbrains.idea
+    pkgs.jetbrains.pycharm
+    pkgs.firefox
   ];
 }

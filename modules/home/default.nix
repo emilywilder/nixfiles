@@ -15,10 +15,7 @@
   # User details
   home.username = my.username;
   home.homeDirectory =
-    if pkgs.stdenv.hostPlatform.isDarwin then
-      "/Users/${my.username}"
-    else
-      "/home/${my.username}";
+    if pkgs.stdenv.hostPlatform.isDarwin then "/Users/${my.username}" else "/home/${my.username}";
 
   xdg.enable = true;
 }

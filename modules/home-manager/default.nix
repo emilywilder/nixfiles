@@ -10,6 +10,11 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${config.my.username} = config.my.home.config;
-    extraSpecialArgs = { inherit inputs; } // { my = config.my; };
+    extraSpecialArgs = {
+      inherit inputs;
+    }
+    // {
+      my = config.my;
+    };
   };
 }

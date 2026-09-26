@@ -23,7 +23,7 @@
   # Clipboard sharing
   services.spice-vdagentd.enable = true;
 
-   # Time syncing and scripting
+  # Time syncing and scripting
   services.qemuGuest.enable = true;
 
   # VirtFS alternative for directory sharing
