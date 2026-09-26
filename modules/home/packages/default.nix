@@ -42,7 +42,7 @@
     pkgs.git-filter-repo
 
     # languages
-    (pkgs.python3.withPackages (ps: with ps; [ pip ]))
+    pkgs.python3
     pkgs.perl
     pkgs.nodejs
     pkgs.R
