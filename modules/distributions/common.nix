@@ -17,6 +17,8 @@
     inputs.self.overlays.pins
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   users.users.${config.my.username} = {
     openssh.authorizedKeys.keys = config.my.openssh.keys;
   };
@@ -34,8 +36,6 @@
       nixpkgs-darwin.flake = inputs.nixpkgs-darwin;
     };
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
 
